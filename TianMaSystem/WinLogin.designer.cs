@@ -34,7 +34,6 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btn_Login = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFromClosed
@@ -110,20 +109,6 @@
             this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName1_KeyPress);
             this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(210, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 33);
-            this.button1.TabIndex = 1367;
-            this.button1.Text = "登  录";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // WinLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -131,7 +116,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(651, 467);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFromClosed);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btn_Login);
@@ -157,7 +141,6 @@
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Button btnFromClosed;
-        private System.Windows.Forms.Button button1;
 
     }
 }

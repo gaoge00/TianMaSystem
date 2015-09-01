@@ -60,7 +60,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtSxMc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fspdMc)).BeginInit();
@@ -1271,9 +1270,11 @@
             this.grpBox.Controls.Add(this.cboGlMc);
             this.grpBox.Controls.Add(this.txtMcKey);
             this.grpBox.Controls.Add(this.txtZsMc);
+            this.grpBox.Controls.Add(this.txtSxMc);
             this.grpBox.Controls.Add(this.label4);
             this.grpBox.Controls.Add(this.label3);
             this.grpBox.Controls.Add(this.label2);
+            this.grpBox.Controls.Add(this.label5);
             this.grpBox.ForeColor = System.Drawing.Color.Navy;
             this.grpBox.Location = new System.Drawing.Point(8, 37);
             this.grpBox.Name = "grpBox";
@@ -1344,7 +1345,7 @@
             this.txtZsMc.MaxLength = 20;
             this.txtZsMc.Name = "txtZsMc";
             this.txtZsMc.ShortcutsEnabled = false;
-            this.txtZsMc.Size = new System.Drawing.Size(454, 21);
+            this.txtZsMc.Size = new System.Drawing.Size(178, 21);
             this.txtZsMc.TabIndex = 2;
             this.txtZsMc.TextChanged += new System.EventHandler(this.txtZsMc_TextChanged);
             this.txtZsMc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZsMc_KeyPress);
@@ -1382,26 +1383,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "管理名称：";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(9, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 12);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "*";
-            this.label9.Visible = false;
-            // 
             // txtSxMc
             // 
             this.txtSxMc.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSxMc.ForeColor = System.Drawing.Color.Black;
-            this.txtSxMc.Location = new System.Drawing.Point(87, 18);
+            this.txtSxMc.Location = new System.Drawing.Point(368, 57);
             this.txtSxMc.MaxLength = 20;
             this.txtSxMc.Name = "txtSxMc";
             this.txtSxMc.ShortcutsEnabled = false;
-            this.txtSxMc.Size = new System.Drawing.Size(33, 21);
+            this.txtSxMc.Size = new System.Drawing.Size(181, 21);
             this.txtSxMc.TabIndex = 3;
             this.txtSxMc.TabStop = false;
             this.txtSxMc.Visible = false;
@@ -1411,8 +1401,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(22, 22);
+            this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label5.Location = new System.Drawing.Point(308, 62);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 5;
@@ -1426,16 +1416,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(590, 418);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.fspdMc);
-            this.Controls.Add(this.txtSxMc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpBox);
-            this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -1448,7 +1435,6 @@
             this.grpBox.ResumeLayout(false);
             this.grpBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1462,7 +1448,6 @@
         private FarPoint.Win.Spread.SheetView fspdMc_Sheet1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpBox;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

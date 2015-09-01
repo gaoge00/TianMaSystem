@@ -96,6 +96,7 @@
     <Compile Include="Conversion.cs" />
     <Compile Include="ConvertHelper.cs" />
     <Compile Include="dateTimeDiff.cs" />
+    <Compile Include="DBHelper.cs" />
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="ExportExcel.cs" />
     <Compile Include="FileUtil.cs" />

@@ -25,8 +25,8 @@ namespace BSC_System
         private void WinFMD010_Load(object sender, EventArgs e)
         {
             try
-            {
-                //定义Spread 行数
+            {    
+                //定义Spread 行数 阿达山东 
                 this.fspdMc.ActiveSheet.Rows.Count = 0;
                 //combox绑定数据
                 comboxBind(cboGlMc, "GLMC");
