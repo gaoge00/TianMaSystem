@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Function;
 using TianMaSystem;
 
-namespace BSC_System
+namespace TianMaSystem
 {
     static class Program
     {

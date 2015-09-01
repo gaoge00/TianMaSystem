@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Office.Interop.Excel;
 
 namespace Function
 {
@@ -38,7 +39,6 @@ namespace Function
             strSql.Append(")");
             return strSql.ToString();
         }
-
 
         /// <summary>
         /// 更新一条数据
@@ -81,6 +81,44 @@ namespace Function
 
             strSql.Append("delete from " + _mTableName + " where 1=1 " + strWhere);
 
+            return strSql.ToString();
+        }
+
+
+        /// <summary>
+        /// 是否存在该记录
+        /// </summary>
+        public static bool Exists(string _mTableName, string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from " + _mTableName + "");
+            strSql.Append(" where 1=1 ");
+            strSql.Append(strWhere); 
+            return DbHelperMySql.Exists(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_mTableName"></param>
+        /// <param name="listFields"></param>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public static string getAllList(string _mTableName,List<string> listFields, string strWhere)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select ");
+            for(int i=0;i<listFields.Count;i++)
+            {
+                strSql.Append(listFields[i]+",");
+            }
+
+            if (strSql.ToString().LastIndexOf(',') != -1)
+                strSql.Remove(strSql.ToString().LastIndexOf(','),1);
+            strSql.Append(" from " + _mTableName + "");
+            strSql.Append(" where 1=1 ");
+            strSql.Append(strWhere);
             return strSql.ToString();
         }
     }

@@ -786,7 +786,7 @@ namespace TianMaSystem
                 if (0 < dt.Rows.Count)
                 {
                     string P_PorName = dt.Rows[0]["P_PorName"].ToString();
-                    showForm = (Form)System.Reflection.Assembly.Load("BSC_System").CreateInstance("BSC_System." + P_PorName);
+                    showForm = (Form)System.Reflection.Assembly.Load("TianMaSystem").CreateInstance("TianMaSystem." + P_PorName);
 
                 }
                 dt.Clear();

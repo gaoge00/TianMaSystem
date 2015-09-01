@@ -7,16 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Function;
-//using DBUtility;
 
-namespace BSC_System
+namespace TianMaSystem
 {
     public partial class PC04 : Form
     {
-        BLL.fmd000 _bllFMD010 = new BLL.fmd000();
-        Model.fmd000 _modelFMD010 = new Model.fmd000();
+        BLL.fmd000 _bllFMD000 = new BLL.fmd000();
+        Model.fmd000 _modelFMD000 = new Model.fmd000();
         Function.systemdate systemdate = new Function.systemdate();
-
+        string TableName = "FMD000";
         public PC04()
         {
             InitializeComponent();
@@ -25,8 +24,8 @@ namespace BSC_System
         private void WinFMD010_Load(object sender, EventArgs e)
         {
             try
-            {    
-                //定义Spread 行数 阿达山东 
+            {
+                //定义Spread 行数
                 this.fspdMc.ActiveSheet.Rows.Count = 0;
                 //combox绑定数据
                 comboxBind(cboGlMc, "GLMC");
@@ -101,17 +100,14 @@ namespace BSC_System
         {
             try
             {
-
                 if (cboGlMc.Text.ToString().IsNullOrEmpty())
                 {
                     this.fspdMc.ActiveSheet.Rows.Count = 0;
                     return;
                 }
-                _modelFMD010.GLBH = cboGlMc.SelectedValue.ToString();
-                _modelFMD010.MCKEY = txtMcKey.Text.Trim();
+                _modelFMD000.GLBH = cboGlMc.getValue();
                 this.fspdMc.ActiveSheet.Rows.Count = 0;
-
-                DataTable dtTable = _bllFMD010.getspread(_modelFMD010);
+                DataTable dtTable = _bllFMD000.getspread(_modelFMD000);
 
                 if (dtTable.Rows.Count > 0)
                 {
@@ -120,9 +116,9 @@ namespace BSC_System
                         this.fspdMc.ActiveSheet.Rows.Count++;
                         //往spread里填充数据
                         this.fspdMc.ActiveSheet.SetValue(i, 0, dtTable.Rows[i]["glbh"].ToString());
-                        this.fspdMc.ActiveSheet.SetValue(i, 1, dtTable.Rows[i]["mckey"].ToString());
-                        this.fspdMc.ActiveSheet.SetValue(i, 2, dtTable.Rows[i]["zsmc"].ToString());
-                       // this.fspdMc.ActiveSheet.SetValue(i, 3, dtTable.Rows[i]["sxmc"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 1, dtTable.Rows[i]["zsmc"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 2, dtTable.Rows[i]["slmc"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 3, dtTable.Rows[i]["ID"].ToString());
                     }
 
                     //ComSpread.SpdSetFocus(fspdMc, 0, 0);
@@ -203,29 +199,11 @@ namespace BSC_System
                 cboGlMc.Focus();
                 return;
             }
-            if (txtMcKey.Text.strReplace().IsNullOrEmpty())
-            {
-                ComForm.DspMsg("W002", "名称KEY");
-                txtMcKey.Focus();
-                return;
-            }
 
-            //判断名称KEY 是否存在
-            bool chkMckey = false;
-            for (int i = 0; i < fspdMc.ActiveSheet.Rows.Count; i++)
+            if (lblID.Text.IsNullOrEmpty())
             {
-                if (txtMcKey.Text.Equals(ComSpread.SpdGetValue(fspdMc, i, 1)))
-                {
-                    chkMckey = true;
-                    break;
-                }
-            }
-            //判断名称KEY 是否存在，不存在不做删除操作
-            if (chkMckey == false)
-            {
-                ComForm.DspMsg("W063", "名称KEY");
-
-                txtMcKey.Focus();
+                ComForm.DspMsg("W063", "");
+                cboGlMc.Focus();
                 return;
             }
 
@@ -233,14 +211,14 @@ namespace BSC_System
             {
                 try
                 {
-                    _modelFMD010.GLBH = cboGlMc.SelectedValue.ToString();
-                    _modelFMD010.MCKEY = txtMcKey.Text.strReplace();
-                    _bllFMD010.Delete(_modelFMD010.GLBH, _modelFMD010.MCKEY);
-                    ComForm.DspMsg("M001", "");
+                    _modelFMD000.ID = lblID.Text.StringToInt();
+                    if (DbHelperMySql.ExecuteSql(DBHelper.Del(TableName, " and ID=" + _modelFMD000.ID + "")) != -1)
+                    { ComForm.DspMsg("M001", "");
+                    lblID.Text = string.Empty;
+                    }
+                    else
+                        ComForm.DspMsg("E001", "");
                     cboGlMc.Focus();
-
-
-
                 }
                 catch (Exception ew)
                 {
@@ -276,56 +254,35 @@ namespace BSC_System
                 return;
 
             }
-            //if (txtSxMc.Text.strReplace().IsNullOrEmpty())
-            //{
-
-            //    ComForm.DspMsg("W002", "缩写名称");
-            //    txtSxMc.Focus();
-            //    return;
-            //}
-
-            if (_bllFMD010.chkMCK_ZSMC(cboGlMc.getValue(), txtMcKey.Text.strReplace(), txtZsMc.Text.strReplace()))
-            {
-                if (cboGlMc.getValue().Equals("13") == false)
-                {
-                    ComForm.DspMsg("W068", "正式名称");
-                    txtZsMc.Focus();
-                    return;
-                }
-            }
+           
             if (ComConst.LING == ComForm.DspMsg("Q004", ""))
             {
-
                 try
                 {
-                    _modelFMD010.GLBH = cboGlMc.SelectedValue.ToString();
-                    _modelFMD010.MCKEY = txtMcKey.Text.strReplace();
-                    _modelFMD010.ZSMC = txtZsMc.Text.strReplace();
-                    //_modelFMD010.SXMC = txtSxMc.Text.strReplace();
-                    if (_bllFMD010.Exists(_modelFMD010.GLBH, _modelFMD010.MCKEY))
+                    List<string> lisSql = new List<string>();
+                    _modelFMD000.GLBH = cboGlMc.getValue() + txtMcKey.Text.strReplace();
+                    _modelFMD000.ZSMC = txtZsMc.Text.strReplace();
+                    _modelFMD000.SLMC = txtSxMc.Text.strReplace();
+                    if (_bllFMD000.Exists(_modelFMD000.GLBH))
                     {
-                        //更新数据
-                        _modelFMD010.GXZBH = ComForm.strUserName;
-                        _modelFMD010.GXR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
-                        _modelFMD010.GXSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
-                        _modelFMD010.GXDMM = systemdate.Get_SysDNBH();
-                        _bllFMD010.Update(_modelFMD010);
-                        ComForm.DspMsg("M002", "");
-                        cboGlMc.Focus();
+                        lisSql.Add(DBHelper.Del(TableName, "and GLBH='"+_modelFMD000.GLBH+"'"));
                     }
-                    else
-                    {
                         //插入数据
-                        _modelFMD010.RLZBH = ComForm.strUserName;
-                        _modelFMD010.RLR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
-                        _modelFMD010.RLSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
-                        _modelFMD010.RLDMM = systemdate.Get_SysDNBH();
-                        _bllFMD010.Add(_modelFMD010);
-                        ComForm.DspMsg("M002", "");
+                        _modelFMD000.RLZBH = ComForm.strUserName;
+                        _modelFMD000.RLR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
+                        _modelFMD000.RLSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
+                        _modelFMD000.RLDMM = systemdate.Get_SysDNBH();
+                        lisSql.Add(DBHelper.Add(TableName, _modelFMD000));
+                        if (DbHelperMySql.ExecuteSqlTran(lisSql) != -1)
+                        {
+                            ComForm.DspMsg("M002", "");
+                        }
+                        else
+                        {
+                            ComForm.DspMsg("E001", "");
+                            ComForm.InsertErrLog("数据插入失败！", this.Name);
+                        }
                         cboGlMc.Focus();
-
-                    }
-
                 }
                 catch (Exception ew)
                 {
@@ -362,18 +319,17 @@ namespace BSC_System
         {
             try
             {
-                if ("0".Equals(txtMcKey.Text) || "00".Equals(txtMcKey.Text) || "000".Equals(txtMcKey.Text))
+                if (txtMcKey.Text.IsNullOrEmpty())
                 {
                     txtMcKey.Text = string.Empty;
                     return;
                 }
                 if (!txtMcKey.Text.IsNullOrEmpty())
                 {
-                    txtMcKey.Text = txtMcKey.Text.PadLeft(3, '0');
+                    txtMcKey.Text = txtMcKey.Text.PadLeft(2, '0');
                 }
                 if (cboGlMc.Text.IsNullOrEmpty())
                     return;
-
             }
             catch (Exception ex)
             {
@@ -405,10 +361,12 @@ namespace BSC_System
                 {
                     return;
                 }
-                txtMcKey.Text = this.fspdMc.Sheets[0].Cells[e.Row, 1].Text.ToString().Trim();
-                txtZsMc.Text = this.fspdMc.Sheets[0].Cells[e.Row, 2].Text.ToString().Trim();
-                txtSxMc.Text = this.fspdMc.Sheets[0].Cells[e.Row, 3].Text.ToString().Trim();
 
+
+                txtMcKey.Text = this.fspdMc.Sheets[0].Cells[e.Row, 0].Text.ToString().Trim().Substring(2);
+                txtZsMc.Text = this.fspdMc.Sheets[0].Cells[e.Row, 1].Text.ToString().Trim();
+                txtSxMc.Text = this.fspdMc.Sheets[0].Cells[e.Row, 2].Text.ToString().Trim();
+                lblID.Text = this.fspdMc.Sheets[0].Cells[e.Row, 3].Text.ToString().Trim();
             }
             catch (Exception ex)
             {
@@ -474,9 +432,6 @@ namespace BSC_System
         }
         #endregion
 
-        private void txtZsMc_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

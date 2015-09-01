@@ -33,9 +33,9 @@ namespace BLL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool Exists(string GLBH,string MCKEY)
+		public bool Exists(string GLBH )
 		{
-			return dal.Exists(GLBH,MCKEY);
+			return dal.Exists(GLBH);
 		}
 
 		/// <summary>
@@ -57,11 +57,19 @@ namespace BLL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(string GLBH,string MCKEY)
+        public string DeleteByGLBH(string GLBH)
 		{
+			return dal.DeleteByGLBH(GLBH);
 			
-			return dal.Delete(GLBH,MCKEY);
 		}
+
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public string DeleteByID(string ID)
+        {
+            return dal.DeleteByID(ID);
+        }
 
 		/// <summary>
 		/// 得到一个对象实体
@@ -175,12 +183,11 @@ namespace BLL
         /// 检查名称Key 和 正式名称是否唯一
         /// </summary>
         /// <param name="GLBH">管理编号</param>
-        /// <param name="MCKEY">名称KEY</param>
         /// <param name="ZSMC">正式名称</param>
         /// <returns>Bool</returns>
-        public bool chkMCK_ZSMC(string GLBH, string MCKEY, string ZSMC)
+        public bool chkMCK_ZSMC(string GLBH,  string ZSMC)
         {
-            return dal.chkMCK_ZSMC(GLBH, MCKEY, ZSMC);
+            return dal.chkMCK_ZSMC(GLBH, ZSMC);
         }
 
         public string getZSMC(string GLBH, string MCKEY)

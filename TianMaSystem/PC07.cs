@@ -9,14 +9,14 @@ using System.Windows.Forms;
 using Function;
 //using DBUtility;
 
-namespace BSC_System
+namespace TianMaSystem
 {
     public partial class PC07 : Form
     {
         BLL.fmd030 _bllFMD030 = new BLL.fmd030();
         Model.fmd030 _modelFMD030 = new Model.fmd030();
         Function.systemdate systemdate = new Function.systemdate();
-
+        public const string TableName = "FMD030";
         public PC07()
         {
             InitializeComponent();
@@ -76,21 +76,21 @@ namespace BSC_System
 
             //    if (arrData == "0" && ty == "9")
             //    {
-            //        this.txtMcKey.Enabled = false;
+            //        this.txtDZ.Enabled = false;
             //        this.txtZsMc.Enabled = false;
             //        this.txtSxMc.Enabled = false;
 
             //    }
             //    else
             //    {
-            //        this.txtMcKey.Enabled = true;
+            //        this.txtDZ.Enabled = true;
             //        this.txtZsMc.Enabled = true;
             //        this.txtSxMc.Enabled = true;
             //    }
             //}
-            txtMcKey.Text = string.Empty;
-            txtZsMc.Text = string.Empty;
-            txtSxMc.Text = string.Empty;
+            //txtDZ.Text = string.Empty;
+            txtGYSMC.Text = string.Empty;
+            txtGYSSLMC.Text = string.Empty;
             //Spread 绑定数据
             fillSPD();
         }
@@ -104,10 +104,12 @@ namespace BSC_System
             {
           
                 //"" = cboGlMc.SelectedValue.ToString();
-                _modelFMD030.KHBH = txtMcKey.Text.Trim();
+                //_modelFMD030.KHBH = txtDZ.Text.Trim();
                 this.fspdMc.ActiveSheet.Rows.Count = 0;
-
-                DataTable dtTable = _bllFMD030.getspread(_modelFMD030);
+                string strWhere=" and SCQF='0'";
+                List<string> listFields=new List<string>();
+                listFields.Add(" ID,GYSMC,GYSSLMC,DZ,DH,LXR");
+                DataTable dtTable = DbHelperMySql.Query(DBHelper.getAllList(TableName, listFields, strWhere)).Tables[0];
 
                 if (dtTable.Rows.Count > 0)
                 {
@@ -140,7 +142,7 @@ namespace BSC_System
 
         #region 名称key文本校验
 
-        private void txtMcKey_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDZ_KeyPress(object sender, KeyPressEventArgs e)
         {
             ComForm.IsNum(e);
         }
@@ -178,9 +180,9 @@ namespace BSC_System
             if (ComConst.LING == ComForm.DspMsg("Q002", ""))
             {
                // cboGlMc.Text = string.Empty;
-                txtMcKey.Text = string.Empty;
-                txtSxMc.Text = string.Empty;
-                txtZsMc.Text = string.Empty;
+                txtDZ.Text = string.Empty;
+                txtGYSSLMC.Text = string.Empty;
+                txtGYSMC.Text = string.Empty;
                // fspdMc.ActiveSheet.Rows.Count = 0;
                // cboGlMc.Focus();
                 fillSPD();
@@ -188,7 +190,7 @@ namespace BSC_System
             else
             {
                 //cboGlMc.Focus();
-                txtMcKey.Focus();
+                txtDZ.Focus();
             }
         }
 
@@ -201,10 +203,10 @@ namespace BSC_System
             //    cboGlMc.Focus();
             //    return;
             //}
-            if (txtMcKey.Text.strReplace().IsNullOrEmpty())
+            if (txtDZ.Text.strReplace().IsNullOrEmpty())
             {
                 ComForm.DspMsg("W002", "客户编号");
-                txtMcKey.Focus();
+                txtDZ.Focus();
                 return;
             }
 
@@ -212,7 +214,7 @@ namespace BSC_System
             bool chkMckey = false;
             for (int i = 0; i < fspdMc.ActiveSheet.Rows.Count; i++)
             {
-                if (txtMcKey.Text.Equals(ComSpread.SpdGetValue(fspdMc, i, 0)))
+                if (txtDZ.Text.Equals(ComSpread.SpdGetValue(fspdMc, i, 0)))
                 {
                     chkMckey = true;
                     break;
@@ -223,7 +225,7 @@ namespace BSC_System
             //{
             //    ComForm.DspMsg("W063", "客户编号");
 
-            //    txtMcKey.Focus();
+            //    txtDZ.Focus();
             //    return;
             //}
 
@@ -242,7 +244,7 @@ namespace BSC_System
             {
                 ComForm.DspMsg("W063", "客户名称");
 
-                txtZsMc.Focus();
+                txtGYSMC.Focus();
                 return;
             }
 
@@ -250,12 +252,11 @@ namespace BSC_System
             {
                 try
                 {
-                    //"" = cboGlMc.SelectedValue.ToString();
-                    _modelFMD030.KHBH = txtMcKey.Text.strReplace();
-                    _modelFMD030.KHMC = txtZsMc.Text.strReplace();
-                    _bllFMD030.Delete(_modelFMD030.KHBH, "");
+                    //_modelFMD030.KHBH = txtDZ.Text.strReplace();
+                    //_modelFMD030.KHMC = txtZsMc.Text.strReplace();
+                    //_bllFMD030.Delete(_modelFMD030.KHBH, "");
                     ComForm.DspMsg("M001", "");
-                    txtMcKey.Focus();
+                    txtDZ.Focus();
 
 
 
@@ -265,9 +266,9 @@ namespace BSC_System
                     ComForm.DspMsg("E001", "");
                     return;
                 }
-                txtMcKey.Text = string.Empty;
-                txtSxMc.Text = string.Empty;
-                txtZsMc.Text = string.Empty;
+                txtDZ.Text = string.Empty;
+                txtGYSSLMC.Text = string.Empty;
+                txtGYSMC.Text = string.Empty;
                 fillSPD();
             }
         }
@@ -281,64 +282,64 @@ namespace BSC_System
             //    cboGlMc.Focus();
             //    return;
             //}
-            if (txtMcKey.Text.strReplace().IsNullOrEmpty())
+            if (txtDZ.Text.strReplace().IsNullOrEmpty())
             {
                 ComForm.DspMsg("W002", "客户编号");
-                txtMcKey.Focus();
+                txtDZ.Focus();
                 return;
             }
-            if (txtZsMc.Text.strReplace().IsNullOrEmpty())
+            if (txtGYSMC.Text.strReplace().IsNullOrEmpty())
             {
                 ComForm.DspMsg("W002", "客户名称");
-                txtZsMc.Focus();
+                txtGYSMC.Focus();
                 return;
 
             }
-            //if (txtSxMc.Text.strReplace().IsNullOrEmpty())
-            //{
+            if (txtGYSSLMC.Text.strReplace().IsNullOrEmpty())
+            {
 
-            //    ComForm.DspMsg("W002", "缩写名称");
-            //    txtSxMc.Focus();
+                ComForm.DspMsg("W002", "缩写名称");
+                txtGYSSLMC.Focus();
+                return;
+            }
+
+            //if (_bllFMD030.chkMCK_ZSMC("", txtDZ.Text.strReplace(), txtZsMc.Text.strReplace()))
+            //{
+            //    ComForm.DspMsg("W068", "客户名称");
+            //    txtZsMc.Focus();
             //    return;
             //}
-
-            if (_bllFMD030.chkMCK_ZSMC("", txtMcKey.Text.strReplace(), txtZsMc.Text.strReplace()))
-            {
-                ComForm.DspMsg("W068", "客户名称");
-                txtZsMc.Focus();
-                return;
-            }
             if (ComConst.LING == ComForm.DspMsg("Q004", ""))
             {
 
                 try
                 {
-                   // "" = cboGlMc.SelectedValue.ToString();
-                    _modelFMD030.KHBH = txtMcKey.Text.strReplace();
-                    _modelFMD030.KHMC = txtZsMc.Text.strReplace();
-                    _modelFMD030.KHSXM = txtSxMc.Text.strReplace();
-                    _modelFMD030.ZT = "1";
-                    if (_bllFMD030.Exists(_modelFMD030.KHBH,_modelFMD030.KHMC))
+   
+                    //_modelFMD030.KHBH = txtDZ.Text.strReplace();
+                    //_modelFMD030.KHMC = txtZsMc.Text.strReplace();
+                    //_modelFMD030.KHSXM = txtSxMc.Text.strReplace();
+                    //_modelFMD030.ZT = "1";
+                    if (DBHelper.Exists(TableName," and "))
                     {
                         //更新数据
-                        _modelFMD030.GXZBH = ComForm.strUserName;
-                        _modelFMD030.GXR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
-                        _modelFMD030.GXSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
-                        _modelFMD030.GXDMM = systemdate.Get_SysDNBH();
-                        _bllFMD030.Update(_modelFMD030);
+                        //_modelFMD030.GXZBH = ComForm.strUserName;
+                        //_modelFMD030.GXR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
+                        //_modelFMD030.GXSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
+                        //_modelFMD030.GXDMM = systemdate.Get_SysDNBH();
+                        //_bllFMD030.Update(_modelFMD030);
                         ComForm.DspMsg("M002", "");
-                        txtMcKey.Focus();
+                        txtDZ.Focus();
                     }
                     else
                     {
                         //插入数据
-                        _modelFMD030.RLZBH = ComForm.strUserName;
-                        _modelFMD030.RLR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
-                        _modelFMD030.RLSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
-                        _modelFMD030.RLDMM = systemdate.Get_SysDNBH();
-                        _bllFMD030.Add(_modelFMD030);
+                        //_modelFMD030.RLZBH = ComForm.strUserName;
+                        //_modelFMD030.RLR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
+                        //_modelFMD030.RLSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
+                        //_modelFMD030.RLDMM = systemdate.Get_SysDNBH();
+                        //_bllFMD030.Add(_modelFMD030);
                         ComForm.DspMsg("M002", "");
-                        txtMcKey.Focus();
+                        txtDZ.Focus();
 
                     }
 
@@ -349,11 +350,11 @@ namespace BSC_System
                     ComForm.InsertErrLog(ew.ToString(), this.Name);
                     return;
                 }
-                txtMcKey.Text = string.Empty;
-                txtZsMc.Text = string.Empty;
-                txtSxMc.Text = string.Empty;
+                txtDZ.Text = string.Empty;
+                txtGYSMC.Text = string.Empty;
+                txtGYSSLMC.Text = string.Empty;
                 fillSPD();
-                txtMcKey.Focus();
+                txtDZ.Focus();
             }
 
         }
@@ -368,38 +369,38 @@ namespace BSC_System
             }
             else
             {
-                txtMcKey.Focus();
+                txtDZ.Focus();
             }
         }
         #endregion
 
         #region 名称KEY 自动补零
 
-        private void txtMcKey_Validating(object sender, CancelEventArgs e)
+        private void txtDZ_Validating(object sender, CancelEventArgs e)
         {
             try
             {
-                //if ("0".Equals(txtMcKey.Text) || "00".Equals(txtMcKey.Text) || "000".Equals(txtMcKey.Text))
+                //if ("0".Equals(txtDZ.Text) || "00".Equals(txtDZ.Text) || "000".Equals(txtDZ.Text))
                 //{
-                //    txtMcKey.Text = string.Empty;
+                //    txtDZ.Text = string.Empty;
                 //    return;
                 //}
-                if (!txtMcKey.Text.IsNullOrEmpty())
+                if (!txtDZ.Text.IsNullOrEmpty())
                 {
-                    txtMcKey.Text = txtMcKey.Text.PadLeft(6, '0');
+                    txtDZ.Text = txtDZ.Text.PadLeft(6, '0');
                 }
-                if (_bllFMD030.Exists(txtMcKey.Text, ""))
+                if (DBHelper.Exists("FMD000", " and "))
                 {
                     _modelFMD030 = new Model.fmd030();
-                    _modelFMD030 = _bllFMD030.GetModel(txtMcKey.Text, "");
-                    txtZsMc.Text = _modelFMD030.KHMC;
-                    txtSxMc.Text = _modelFMD030.KHSXM;
+                    //_modelFMD030 = _bllFMD030.GetModel(txtDZ.Text, "");
+                    //txtZsMc.Text = _modelFMD030.KHMC;
+                    //txtSxMc.Text = _modelFMD030.KHSXM;
 
                 }
                 else
                 {
-                    txtZsMc.Text = "";
-                    txtSxMc.Text = "";
+                    txtGYSMC.Text = "";
+                    txtGYSSLMC.Text = "";
 
                 }
                 
@@ -425,9 +426,9 @@ namespace BSC_System
                 //string arrData = System.Configuration.ConfigurationSettings.AppSettings["QX"];
 
                
-                txtMcKey.Text = this.fspdMc.Sheets[0].Cells[e.Row, 0].Text.ToString().Trim();
-                txtZsMc.Text = this.fspdMc.Sheets[0].Cells[e.Row, 1].Text.ToString().Trim();
-                txtSxMc.Text = this.fspdMc.Sheets[0].Cells[e.Row, 2].Text.ToString().Trim();
+                txtDZ.Text = this.fspdMc.Sheets[0].Cells[e.Row, 0].Text.ToString().Trim();
+                txtGYSMC.Text = this.fspdMc.Sheets[0].Cells[e.Row, 1].Text.ToString().Trim();
+                txtGYSSLMC.Text = this.fspdMc.Sheets[0].Cells[e.Row, 2].Text.ToString().Trim();
 
             }
             catch (Exception ex)
@@ -494,11 +495,11 @@ namespace BSC_System
         }
         #endregion
 
-        private void txtMcKey_Leave(object sender, EventArgs e)
+        private void txtDZ_Leave(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(txtMcKey.Text) == false)
+            //if (string.IsNullOrEmpty(txtDZ.Text) == false)
             //{
-            //    txtMcKey.Text = txtMcKey.Text.PadLeft(6, '0');
+            //    txtDZ.Text = txtDZ.Text.PadLeft(6, '0');
             //}
 
         }

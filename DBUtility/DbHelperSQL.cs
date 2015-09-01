@@ -14,12 +14,12 @@ using System.Configuration;
     {
         //在web.config中设置连接字符串
         //<add key="ConnectionString" value="server=127.0.0.1;database=DATABASE;uid=sa;pwd=" />			
-        protected static string connectionString ="";// ConfigurationManager.AppSettings["strMysql"];
+        protected static string connectionString = "";// ConfigurationManager.AppSettings["strMysql"];
 
         public DbHelperSQL()
         {
         }
-        
+
         /// <summary>
         /// 得到当前SQL Server服务器的时间
         /// </summary>
@@ -44,7 +44,7 @@ using System.Configuration;
         /// <returns>影响的记录数</returns>
         public static int ExecuteSql(string SQLString)
         {
-            
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(SQLString, connection))
@@ -509,4 +509,5 @@ using System.Configuration;
         #endregion
 
     }
+
 

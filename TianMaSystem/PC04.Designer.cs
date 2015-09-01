@@ -1,4 +1,4 @@
-﻿namespace BSC_System
+﻿namespace TianMaSystem
 {
     partial class PC04
     {
@@ -60,6 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.txtSxMc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fspdMc)).BeginInit();
@@ -197,10 +198,10 @@
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 0).Value = "管理编号";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).Font = new System.Drawing.Font("宋体", 9F);
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).ForeColor = System.Drawing.Color.Black;
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).Value = "名称KEY";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).Value = "正式名称";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).Font = new System.Drawing.Font("宋体", 9F);
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).ForeColor = System.Drawing.Color.Black;
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).Value = "正式名称";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).Value = "缩略名称";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).Font = new System.Drawing.Font("宋体", 9F);
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).ForeColor = System.Drawing.Color.Blue;
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).Value = "缩写名称";
@@ -220,19 +221,19 @@
             this.fspdMc_Sheet1.Columns.Get(1).CellType = textCellType2;
             this.fspdMc_Sheet1.Columns.Get(1).ForeColor = System.Drawing.Color.Black;
             this.fspdMc_Sheet1.Columns.Get(1).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
-            this.fspdMc_Sheet1.Columns.Get(1).Label = "名称KEY";
+            this.fspdMc_Sheet1.Columns.Get(1).Label = "正式名称";
             this.fspdMc_Sheet1.Columns.Get(1).Locked = true;
             this.fspdMc_Sheet1.Columns.Get(1).Resizable = false;
             this.fspdMc_Sheet1.Columns.Get(1).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
-            this.fspdMc_Sheet1.Columns.Get(1).Width = 160F;
+            this.fspdMc_Sheet1.Columns.Get(1).Width = 240F;
             this.fspdMc_Sheet1.Columns.Get(2).BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.fspdMc_Sheet1.Columns.Get(2).CellType = textCellType3;
             this.fspdMc_Sheet1.Columns.Get(2).ForeColor = System.Drawing.Color.Black;
             this.fspdMc_Sheet1.Columns.Get(2).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
-            this.fspdMc_Sheet1.Columns.Get(2).Label = "正式名称";
+            this.fspdMc_Sheet1.Columns.Get(2).Label = "缩略名称";
             this.fspdMc_Sheet1.Columns.Get(2).Locked = true;
             this.fspdMc_Sheet1.Columns.Get(2).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
-            this.fspdMc_Sheet1.Columns.Get(2).Width = 240F;
+            this.fspdMc_Sheet1.Columns.Get(2).Width = 160F;
             this.fspdMc_Sheet1.Columns.Get(3).BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.fspdMc_Sheet1.Columns.Get(3).CellType = textCellType4;
             this.fspdMc_Sheet1.Columns.Get(3).ForeColor = System.Drawing.Color.Navy;
@@ -1329,7 +1330,7 @@
             this.txtMcKey.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMcKey.ForeColor = System.Drawing.Color.Black;
             this.txtMcKey.Location = new System.Drawing.Point(368, 24);
-            this.txtMcKey.MaxLength = 3;
+            this.txtMcKey.MaxLength = 2;
             this.txtMcKey.Name = "txtMcKey";
             this.txtMcKey.ShortcutsEnabled = false;
             this.txtMcKey.Size = new System.Drawing.Size(181, 21);
@@ -1347,7 +1348,6 @@
             this.txtZsMc.ShortcutsEnabled = false;
             this.txtZsMc.Size = new System.Drawing.Size(178, 21);
             this.txtZsMc.TabIndex = 2;
-            this.txtZsMc.TextChanged += new System.EventHandler(this.txtZsMc_TextChanged);
             this.txtZsMc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZsMc_KeyPress);
             // 
             // label4
@@ -1383,18 +1383,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "管理名称：";
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.Red;
+            this.lblID.Location = new System.Drawing.Point(9, 22);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 12);
+            this.lblID.TabIndex = 9;
+            this.lblID.Visible = false;
+            // 
             // txtSxMc
             // 
             this.txtSxMc.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSxMc.ForeColor = System.Drawing.Color.Black;
-            this.txtSxMc.Location = new System.Drawing.Point(368, 57);
+            this.txtSxMc.Location = new System.Drawing.Point(368, 62);
             this.txtSxMc.MaxLength = 20;
             this.txtSxMc.Name = "txtSxMc";
             this.txtSxMc.ShortcutsEnabled = false;
             this.txtSxMc.Size = new System.Drawing.Size(181, 21);
             this.txtSxMc.TabIndex = 3;
             this.txtSxMc.TabStop = false;
-            this.txtSxMc.Visible = false;
             this.txtSxMc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSxMc_KeyPress);
             // 
             // label5
@@ -1402,12 +1411,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label5.Location = new System.Drawing.Point(308, 62);
+            this.label5.Location = new System.Drawing.Point(308, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 5;
-            this.label5.Text = "缩写名称：";
-            this.label5.Visible = false;
+            this.label5.Text = "缩略名称：";
             // 
             // PC04
             // 
@@ -1416,6 +1424,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(590, 418);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
@@ -1435,6 +1444,7 @@
             this.grpBox.ResumeLayout(false);
             this.grpBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1448,6 +1458,7 @@
         private FarPoint.Win.Spread.SheetView fspdMc_Sheet1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpBox;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

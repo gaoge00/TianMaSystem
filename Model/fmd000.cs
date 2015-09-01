@@ -26,9 +26,10 @@ namespace Model
 		public fmd000()
 		{}
 		#region Model
+        private int? _id;
 		private string _glbh;
-		private string _mckey;
 		private string _zsmc;
+        private string _slmc;
 		private string _bz;
 		private string _rlzbh;
 		private string _rlr;
@@ -49,10 +50,10 @@ namespace Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public string MCKEY
+		public int? ID
 		{
-			set{ _mckey=value;}
-			get{return _mckey;}
+			set{ _id=value;}
+			get{return _id;}
 		}
 		/// <summary>
 		/// 
@@ -62,6 +63,14 @@ namespace Model
 			set{ _zsmc=value;}
 			get{return _zsmc;}
 		}
+        /// <summary>
+        /// 
+        /// </summary>
+        public string SLMC
+        {
+            set { _slmc = value; }
+            get { return _slmc; }
+        }
 		/// <summary>
 		/// 
 		/// </summary>

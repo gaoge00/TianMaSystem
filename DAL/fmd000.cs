@@ -34,11 +34,11 @@ namespace DAL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool Exists(string GLBH,string MCKEY)
+		public bool Exists(string GLBH)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("select count(1) from fmd000");
-			strSql.Append(" where GLBH='"+GLBH+"' and MCKEY='"+MCKEY+"' ");
+			strSql.Append(" where GLBH='"+GLBH+"' ");
 			return DbHelperMySql.Exists(strSql.ToString());
 		}
 
@@ -55,11 +55,7 @@ namespace DAL
 				strSql1.Append("GLBH,");
 				strSql2.Append("'"+model.GLBH+"',");
 			}
-			if (model.MCKEY != null)
-			{
-				strSql1.Append("MCKEY,");
-				strSql2.Append("'"+model.MCKEY+"',");
-			}
+			
 			if (model.ZSMC != null)
 			{
 				strSql1.Append("ZSMC,");
@@ -212,7 +208,7 @@ namespace DAL
 			}
 			int n = strSql.ToString().LastIndexOf(",");
 			strSql.Remove(n, 1);
-			strSql.Append(" where GLBH='"+ model.GLBH+"' and MCKEY='"+ model.MCKEY+"' ");
+			strSql.Append(" where GLBH='"+ model.GLBH+"'  ");
 			int rowsAffected=DbHelperMySql.ExecuteSql(strSql.ToString());
 			if (rowsAffected > 0)
 			{
@@ -227,21 +223,26 @@ namespace DAL
 		/// <summary>
 		/// 删除一条数据
 		/// </summary>
-		public bool Delete(string GLBH,string MCKEY)
+        public string DeleteByGLBH(string GLBH)
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from fmd000 ");
-			strSql.Append(" where GLBH='"+GLBH+"' and MCKEY='"+MCKEY+"' " );
-			int rowsAffected=DbHelperMySql.ExecuteSql(strSql.ToString());
-			if (rowsAffected > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			strSql.Append(" where GLBH='"+GLBH+"' " );
+			return strSql.ToString();
+			
 		}
+
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public string DeleteByID(string ID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from fmd000 ");
+            strSql.Append(" where ID=" + ID + " ");
+            return strSql.ToString();
+
+        }
 
 		/// <summary>
 		/// 得到一个对象实体
@@ -277,10 +278,7 @@ namespace DAL
 				{
 					model.GLBH=row["GLBH"].ToString();
 				}
-				if(row["MCKEY"]!=null)
-				{
-					model.MCKEY=row["MCKEY"].ToString();
-				}
+			
 				if(row["ZSMC"]!=null)
 				{
 					model.ZSMC=row["ZSMC"].ToString();
@@ -399,24 +397,17 @@ namespace DAL
             string str = "";
             if (model.GLBH != "")
             {
-                str = "select * from FMD000 where glbh='" + model.GLBH + "'  order by glbh,Convert(mckey,SIGNED) ";
+                str = "select * from FMD000 where glbh like '%" + model.GLBH + "'  order by glbh";
             }
-            if (model.MCKEY != "")
-            {
-                str = "select * from FMD000 where glbh='" + model.GLBH + "' and mckey='" + model.MCKEY + "'  order by glbh,Convert(mckey,SIGNED) ";
-            }
-            if (model.GLBH == "" && model.MCKEY == "")
-            {
-                str = "select * from FMD000 where '1'='2'  order by glbh,Convert(mckey,SIGNED)";
-            }
+
             return DbHelperMySql.Query(str).Tables[0];
 
         }
 
-        public bool chkMCK_ZSMC(string GLBH, string MCKEY, string ZSMC)
+        public bool chkMCK_ZSMC(string GLBH, string ZSMC)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT COUNT(1) FROM FMD000 WHERE GLBH='" + GLBH + "' AND MCKEY<>'" + MCKEY + "' AND ZSMC='" + ZSMC + "' ");
+            strSql.Append("SELECT COUNT(1) FROM FMD000 WHERE GLBH='" + GLBH + "' AND ZSMC='" + ZSMC + "' ");
             return DbHelperMySql.Exists(strSql.ToString());
         }
 

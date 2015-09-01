@@ -26,114 +26,22 @@ namespace Model
 		public fmd030()
 		{}
 		#region Model
-		private string _khbh;
-		private string _khmc;
-		private string _khsxm;
-		private string _zt;
-		private string _rlzbh;
-		private string _rlr;
-		private string _rlsj;
-		private string _rldmm;
-		private string _gxzbh;
-		private string _gxr;
-		private string _gxsj;
-		private string _gxdmm;
-		/// <summary>
-		/// 
-		/// </summary>
-		public string KHBH
-		{
-			set{ _khbh=value;}
-			get{return _khbh;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string KHMC
-		{
-			set{ _khmc=value;}
-			get{return _khmc;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string KHSXM
-		{
-			set{ _khsxm=value;}
-			get{return _khsxm;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string ZT
-		{
-			set{ _zt=value;}
-			get{return _zt;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string RLZBH
-		{
-			set{ _rlzbh=value;}
-			get{return _rlzbh;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string RLR
-		{
-			set{ _rlr=value;}
-			get{return _rlr;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string RLSJ
-		{
-			set{ _rlsj=value;}
-			get{return _rlsj;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string RLDMM
-		{
-			set{ _rldmm=value;}
-			get{return _rldmm;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string GXZBH
-		{
-			set{ _gxzbh=value;}
-			get{return _gxzbh;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string GXR
-		{
-			set{ _gxr=value;}
-			get{return _gxr;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string GXSJ
-		{
-			set{ _gxsj=value;}
-			get{return _gxsj;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string GXDMM
-		{
-			set{ _gxdmm=value;}
-			get{return _gxdmm;}
-		}
+		private int? ID {get;set;}
+		private string GYSMC {get;set;}
+		private string GYSSLMC {get;set;}
+		private string DZ {get;set;}
+        private string DH {get;set;}
+		private string LXR {get;set;}
+        private string SCQF {get;set;}
+		private string RLZBH {get;set;}
+        private string RLR { get; set; }
+        private string RLSJ { get; set; }
+        private string RLDMM { get; set; }
+        private string GXZBH { get; set; }
+        private string GXR { get; set; }
+        private string GXSJ { get; set; }
+        private string GXDMM { get; set; }
+		
 		#endregion Model
 
 	}

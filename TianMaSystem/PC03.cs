@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Function;
 
-namespace BSC_System
+namespace TianMaSystem
 {
     public partial class PC03 : Form
     {

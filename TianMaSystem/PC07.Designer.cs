@@ -1,4 +1,4 @@
-﻿namespace BSC_System
+﻿namespace TianMaSystem
 {
     partial class PC07
     {
@@ -42,6 +42,7 @@
             FarPoint.Win.Spread.CellType.TextCellType textCellType2 = new FarPoint.Win.Spread.CellType.TextCellType();
             FarPoint.Win.Spread.CellType.TextCellType textCellType3 = new FarPoint.Win.Spread.CellType.TextCellType();
             FarPoint.Win.Spread.CellType.TextCellType textCellType4 = new FarPoint.Win.Spread.CellType.TextCellType();
+            FarPoint.Win.Spread.CellType.TextCellType textCellType5 = new FarPoint.Win.Spread.CellType.TextCellType();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PC07));
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -51,13 +52,17 @@
             this.fspdMc_Sheet1 = new FarPoint.Win.Spread.SheetView();
             this.label1 = new System.Windows.Forms.Label();
             this.grpBox = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtMcKey = new System.Windows.Forms.TextBox();
-            this.txtZsMc = new System.Windows.Forms.TextBox();
-            this.txtSxMc = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtGYSMC = new System.Windows.Forms.TextBox();
+            this.txtGYSSLMC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDZ = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDH = new System.Windows.Forms.TextBox();
+            this.txtLXR = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fspdMc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fspdMc_Sheet1)).BeginInit();
             this.grpBox.SuspendLayout();
@@ -184,22 +189,26 @@
             this.fspdMc_Sheet1.SheetName = "Sheet1";
             // Formulas and custom names must be loaded with R1C1 reference style
             this.fspdMc_Sheet1.ReferenceStyle = FarPoint.Win.Spread.Model.ReferenceStyle.R1C1;
-            this.fspdMc_Sheet1.ColumnCount = 4;
-            this.fspdMc_Sheet1.RowHeader.ColumnCount = 0;
+            this.fspdMc_Sheet1.ColumnCount = 6;
             this.fspdMc_Sheet1.ActiveSkin = new FarPoint.Win.Spread.SheetSkin("CustomSkin2", System.Drawing.Color.White, System.Drawing.Color.Empty, System.Drawing.Color.Empty, System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(232)))), ((int)(((byte)(255))))), FarPoint.Win.Spread.GridLines.Both, System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(232)))), ((int)(((byte)(255))))), System.Drawing.Color.Blue, System.Drawing.Color.Empty, System.Drawing.Color.Empty, System.Drawing.Color.Empty, System.Drawing.Color.Empty, false, false, false, true, true, "ColumnHeaderEnhanced", "RowHeaderEnhanced", "DataAreaDefault", "CornerEnhanced");
             this.fspdMc_Sheet1.AllowNoteEdit = true;
+            this.fspdMc_Sheet1.Cells.Get(0, 3).Value = "12345678901";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 0).Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 0).ForeColor = System.Drawing.Color.Black;
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 0).Value = "客户编号";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 0).Value = "供应商名称";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).Font = new System.Drawing.Font("宋体", 9F);
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).ForeColor = System.Drawing.Color.Black;
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).Value = "客户名称";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 1).Value = "缩略名称";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).Font = new System.Drawing.Font("宋体", 9F);
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).ForeColor = System.Drawing.Color.Black;
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).Value = "客户名称缩写";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 2).Value = "地址";
             this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).Font = new System.Drawing.Font("宋体", 9F);
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).ForeColor = System.Drawing.Color.Blue;
-            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).Value = "缩写名称";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).ForeColor = System.Drawing.Color.Black;
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 3).Value = "电话";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 4).Font = new System.Drawing.Font("宋体", 9F);
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 4).ForeColor = System.Drawing.Color.Black;
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 4).Value = "联系人";
+            this.fspdMc_Sheet1.ColumnHeader.Cells.Get(0, 5).Value = "ID";
             this.fspdMc_Sheet1.ColumnHeader.Columns.Default.VisualStyles = FarPoint.Win.VisualStyles.Off;
             this.fspdMc_Sheet1.ColumnHeader.DefaultStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.fspdMc_Sheet1.ColumnHeader.DefaultStyle.ForeColor = System.Drawing.Color.Blue;
@@ -210,35 +219,43 @@
             this.fspdMc_Sheet1.Columns.Get(0).CellType = textCellType1;
             this.fspdMc_Sheet1.Columns.Get(0).ForeColor = System.Drawing.Color.Black;
             this.fspdMc_Sheet1.Columns.Get(0).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
-            this.fspdMc_Sheet1.Columns.Get(0).Label = "客户编号";
+            this.fspdMc_Sheet1.Columns.Get(0).Label = "供应商名称";
             this.fspdMc_Sheet1.Columns.Get(0).Locked = true;
             this.fspdMc_Sheet1.Columns.Get(0).Resizable = false;
             this.fspdMc_Sheet1.Columns.Get(0).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
-            this.fspdMc_Sheet1.Columns.Get(0).Width = 150F;
+            this.fspdMc_Sheet1.Columns.Get(0).Width = 120F;
             this.fspdMc_Sheet1.Columns.Get(1).BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.fspdMc_Sheet1.Columns.Get(1).CellType = textCellType2;
             this.fspdMc_Sheet1.Columns.Get(1).ForeColor = System.Drawing.Color.Black;
             this.fspdMc_Sheet1.Columns.Get(1).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
-            this.fspdMc_Sheet1.Columns.Get(1).Label = "客户名称";
+            this.fspdMc_Sheet1.Columns.Get(1).Label = "缩略名称";
             this.fspdMc_Sheet1.Columns.Get(1).Locked = true;
             this.fspdMc_Sheet1.Columns.Get(1).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
-            this.fspdMc_Sheet1.Columns.Get(1).Width = 230F;
+            this.fspdMc_Sheet1.Columns.Get(1).Width = 80F;
             this.fspdMc_Sheet1.Columns.Get(2).BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.fspdMc_Sheet1.Columns.Get(2).CellType = textCellType3;
             this.fspdMc_Sheet1.Columns.Get(2).ForeColor = System.Drawing.Color.Black;
             this.fspdMc_Sheet1.Columns.Get(2).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
-            this.fspdMc_Sheet1.Columns.Get(2).Label = "客户名称缩写";
+            this.fspdMc_Sheet1.Columns.Get(2).Label = "地址";
             this.fspdMc_Sheet1.Columns.Get(2).Locked = true;
             this.fspdMc_Sheet1.Columns.Get(2).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
-            this.fspdMc_Sheet1.Columns.Get(2).Width = 167F;
+            this.fspdMc_Sheet1.Columns.Get(2).Width = 180F;
             this.fspdMc_Sheet1.Columns.Get(3).BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.fspdMc_Sheet1.Columns.Get(3).CellType = textCellType4;
-            this.fspdMc_Sheet1.Columns.Get(3).ForeColor = System.Drawing.Color.Navy;
+            this.fspdMc_Sheet1.Columns.Get(3).ForeColor = System.Drawing.Color.Black;
             this.fspdMc_Sheet1.Columns.Get(3).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
-            this.fspdMc_Sheet1.Columns.Get(3).Label = "缩写名称";
+            this.fspdMc_Sheet1.Columns.Get(3).Label = "电话";
             this.fspdMc_Sheet1.Columns.Get(3).Locked = true;
             this.fspdMc_Sheet1.Columns.Get(3).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
-            this.fspdMc_Sheet1.Columns.Get(3).Width = 0F;
+            this.fspdMc_Sheet1.Columns.Get(3).Width = 75F;
+            this.fspdMc_Sheet1.Columns.Get(4).BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.fspdMc_Sheet1.Columns.Get(4).CellType = textCellType5;
+            this.fspdMc_Sheet1.Columns.Get(4).ForeColor = System.Drawing.Color.Black;
+            this.fspdMc_Sheet1.Columns.Get(4).HorizontalAlignment = FarPoint.Win.Spread.CellHorizontalAlignment.Left;
+            this.fspdMc_Sheet1.Columns.Get(4).Label = "联系人";
+            this.fspdMc_Sheet1.Columns.Get(4).VerticalAlignment = FarPoint.Win.Spread.CellVerticalAlignment.Center;
+            this.fspdMc_Sheet1.Columns.Get(5).Label = "ID";
+            this.fspdMc_Sheet1.Columns.Get(5).Visible = false;
             this.fspdMc_Sheet1.RowHeader.Columns.Default.Resizable = false;
             this.fspdMc_Sheet1.RowHeader.Columns.Default.VisualStyles = FarPoint.Win.VisualStyles.Off;
             this.fspdMc_Sheet1.RowHeader.DefaultStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
@@ -1262,17 +1279,21 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(590, 24);
             this.label1.TabIndex = 4448;
-            this.label1.Text = "客 户 信 息 管 理";
+            this.label1.Text = "供 货 商 信 息 管 理";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpBox
             // 
             this.grpBox.BackColor = System.Drawing.Color.Transparent;
-            this.grpBox.Controls.Add(this.label8);
-            this.grpBox.Controls.Add(this.txtMcKey);
-            this.grpBox.Controls.Add(this.txtZsMc);
-            this.grpBox.Controls.Add(this.txtSxMc);
+            this.grpBox.Controls.Add(this.txtDH);
+            this.grpBox.Controls.Add(this.txtLXR);
             this.grpBox.Controls.Add(this.label4);
+            this.grpBox.Controls.Add(this.label6);
+            this.grpBox.Controls.Add(this.txtDZ);
+            this.grpBox.Controls.Add(this.label2);
+            this.grpBox.Controls.Add(this.label8);
+            this.grpBox.Controls.Add(this.txtGYSMC);
+            this.grpBox.Controls.Add(this.txtGYSSLMC);
             this.grpBox.Controls.Add(this.label3);
             this.grpBox.Controls.Add(this.label5);
             this.grpBox.ForeColor = System.Drawing.Color.Navy;
@@ -1282,71 +1303,36 @@
             this.grpBox.TabIndex = 0;
             this.grpBox.TabStop = false;
             // 
-            // label8
+            // txtGYSMC
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(35, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(11, 12);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "*";
+            this.txtGYSMC.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGYSMC.ForeColor = System.Drawing.Color.Black;
+            this.txtGYSMC.Location = new System.Drawing.Point(122, 20);
+            this.txtGYSMC.MaxLength = 100;
+            this.txtGYSMC.Name = "txtGYSMC";
+            this.txtGYSMC.ShortcutsEnabled = false;
+            this.txtGYSMC.Size = new System.Drawing.Size(106, 21);
+            this.txtGYSMC.TabIndex = 5;
+            this.txtGYSMC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZsMc_KeyPress);
             // 
-            // txtMcKey
+            // txtGYSSLMC
             // 
-            this.txtMcKey.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcKey.ForeColor = System.Drawing.Color.Black;
-            this.txtMcKey.Location = new System.Drawing.Point(122, 18);
-            this.txtMcKey.MaxLength = 6;
-            this.txtMcKey.Name = "txtMcKey";
-            this.txtMcKey.ShortcutsEnabled = false;
-            this.txtMcKey.Size = new System.Drawing.Size(75, 21);
-            this.txtMcKey.TabIndex = 2;
-            this.txtMcKey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMcKey_KeyPress);
-            this.txtMcKey.Leave += new System.EventHandler(this.txtMcKey_Leave);
-            this.txtMcKey.Validating += new System.ComponentModel.CancelEventHandler(this.txtMcKey_Validating);
-            // 
-            // txtZsMc
-            // 
-            this.txtZsMc.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZsMc.ForeColor = System.Drawing.Color.Black;
-            this.txtZsMc.Location = new System.Drawing.Point(122, 47);
-            this.txtZsMc.MaxLength = 100;
-            this.txtZsMc.Name = "txtZsMc";
-            this.txtZsMc.ShortcutsEnabled = false;
-            this.txtZsMc.Size = new System.Drawing.Size(421, 21);
-            this.txtZsMc.TabIndex = 5;
-            this.txtZsMc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZsMc_KeyPress);
-            // 
-            // txtSxMc
-            // 
-            this.txtSxMc.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSxMc.ForeColor = System.Drawing.Color.Black;
-            this.txtSxMc.Location = new System.Drawing.Point(122, 76);
-            this.txtSxMc.MaxLength = 50;
-            this.txtSxMc.Name = "txtSxMc";
-            this.txtSxMc.ShortcutsEnabled = false;
-            this.txtSxMc.Size = new System.Drawing.Size(421, 21);
-            this.txtSxMc.TabIndex = 7;
-            this.txtSxMc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSxMc_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label4.Location = new System.Drawing.Point(49, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 12);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "客户编号：";
+            this.txtGYSSLMC.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGYSSLMC.ForeColor = System.Drawing.Color.Black;
+            this.txtGYSSLMC.Location = new System.Drawing.Point(378, 20);
+            this.txtGYSSLMC.MaxLength = 50;
+            this.txtGYSSLMC.Name = "txtGYSSLMC";
+            this.txtGYSSLMC.ShortcutsEnabled = false;
+            this.txtGYSSLMC.Size = new System.Drawing.Size(153, 21);
+            this.txtGYSSLMC.TabIndex = 7;
+            this.txtGYSSLMC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSxMc_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label3.Location = new System.Drawing.Point(49, 52);
+            this.label3.Location = new System.Drawing.Point(49, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 12);
             this.label3.TabIndex = 3;
@@ -1357,11 +1343,87 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label5.Location = new System.Drawing.Point(23, 81);
+            this.label5.Location = new System.Drawing.Point(279, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 12);
             this.label5.TabIndex = 5;
             this.label5.Text = "客户名称缩写：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(40, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 12);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "*";
+            // 
+            // txtDZ
+            // 
+            this.txtDZ.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDZ.ForeColor = System.Drawing.Color.Black;
+            this.txtDZ.Location = new System.Drawing.Point(122, 47);
+            this.txtDZ.MaxLength = 50;
+            this.txtDZ.Name = "txtDZ";
+            this.txtDZ.ShortcutsEnabled = false;
+            this.txtDZ.Size = new System.Drawing.Size(409, 21);
+            this.txtDZ.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label2.Location = new System.Drawing.Point(75, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 12);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "地址：";
+            // 
+            // txtDH
+            // 
+            this.txtDH.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDH.ForeColor = System.Drawing.Color.Black;
+            this.txtDH.Location = new System.Drawing.Point(122, 74);
+            this.txtDH.MaxLength = 100;
+            this.txtDH.Name = "txtDH";
+            this.txtDH.ShortcutsEnabled = false;
+            this.txtDH.Size = new System.Drawing.Size(106, 21);
+            this.txtDH.TabIndex = 12;
+            // 
+            // txtLXR
+            // 
+            this.txtLXR.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLXR.ForeColor = System.Drawing.Color.Black;
+            this.txtLXR.Location = new System.Drawing.Point(378, 74);
+            this.txtLXR.MaxLength = 50;
+            this.txtLXR.Name = "txtLXR";
+            this.txtLXR.ShortcutsEnabled = false;
+            this.txtLXR.Size = new System.Drawing.Size(153, 21);
+            this.txtLXR.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label4.Location = new System.Drawing.Point(75, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 12);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "电话：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label6.Location = new System.Drawing.Point(318, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 12);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "联系人：";
             // 
             // PC07
             // 
@@ -1403,12 +1465,16 @@
         private FarPoint.Win.Spread.SheetView fspdMc_Sheet1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSxMc;
-        private System.Windows.Forms.TextBox txtMcKey;
-        private System.Windows.Forms.TextBox txtZsMc;
+        private System.Windows.Forms.TextBox txtGYSSLMC;
+        private System.Windows.Forms.TextBox txtGYSMC;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDH;
+        private System.Windows.Forms.TextBox txtLXR;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDZ;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
     }
 }
