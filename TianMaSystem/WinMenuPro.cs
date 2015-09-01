@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.IO;
 
 
-namespace BSC_System
+namespace TianMaSystem
 {
     public partial class WinMenuPro : Form
     {

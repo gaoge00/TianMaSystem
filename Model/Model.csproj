@@ -59,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="errlog.cs" />
-     <Compile Include="fmd000.cs" />
+    <Compile Include="ffd010.cs" />
+    <Compile Include="ffd050.cs" />
+    <Compile Include="fmd000.cs" />
     <Compile Include="fmd010.cs" />
     <Compile Include="fmd020.cs" />
     <Compile Include="fmd030.cs" />

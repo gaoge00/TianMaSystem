@@ -1,4 +1,4 @@
-﻿namespace BSC_System
+﻿namespace TianMaSystem
 {
     partial class WinMenuPro
     {

@@ -10,7 +10,7 @@ using Function;
 using System.Runtime.InteropServices;
 using System.Net.Sockets;
 
-namespace BSC_System
+namespace TianMaSystem
 {
     public partial class WinLogin : Form
     {
@@ -231,63 +231,14 @@ namespace BSC_System
         }
 
 
-        /// <summary>
-        /// 打印二维码
-        /// </summary>
-        /// <param name="prtAddress">打印机地址</param>
-        /// <param name="qrText"></param>
-        /// <param name="iCount"></param>
-        /// <returns></returns>
-        public string PrintQrCode(string prtAddress, string qrText, int iCount)
-        {
-            string strSBPL = string.Empty;
-            try
-            {
-                int reCount = 0;//重试次数
-                while (true)
-                {
-                    reCount++;
-
-
-                    bool bStatus = true;
-                    if (bStatus)
-                    {
-                        strSBPL = Function.QrCodeHelper.GetPrintQrSPBL(qrText, iCount);
-                        //写入文本日志
-                       
-
-                       
-                        return "OK";
-                    }
-                    else
-                    {
-                        if (reCount >= 100)
-                        {
-
-                          
-                            return "重试过多。";
-                        }
-                        else
-                        {
-                            System.Threading.Thread.Sleep(1000);
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-            
-                return ex.ToString();
-            }
-        }
+        
 
 
         private void button1_Click_2(object sender, EventArgs e)
         {
 
             MessageBox.Show(GetPrintStatus("192.168.231.57").ToString());
-            MessageBox.Show(PrintQrCode("192.168.231.57", "RK_1_BSA601_O11-05970_150330_390,500", 1));
+           // MessageBox.Show(PrintQrCode("192.168.231.57", "RK_1_BSA601_O11-05970_150330_390,500", 1));
         }
 
         #region 常量
