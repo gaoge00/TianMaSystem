@@ -276,18 +276,7 @@ namespace TianMaSystem
         //保存按钮
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //if (cboGlMc.Text.strReplace().IsNullOrEmpty())
-            //{
-            //    ComForm.DspMsg("W002", "管理名称");
-            //    cboGlMc.Focus();
-            //    return;
-            //}
-            if (txtDZ.Text.strReplace().IsNullOrEmpty())
-            {
-                ComForm.DspMsg("W002", "客户编号");
-                txtDZ.Focus();
-                return;
-            }
+           
             if (txtGYSMC.Text.strReplace().IsNullOrEmpty())
             {
                 ComForm.DspMsg("W002", "客户名称");
@@ -298,7 +287,7 @@ namespace TianMaSystem
             if (txtGYSSLMC.Text.strReplace().IsNullOrEmpty())
             {
 
-                ComForm.DspMsg("W002", "缩写名称");
+                ComForm.DspMsg("W002", "缩略名称");
                 txtGYSSLMC.Focus();
                 return;
             }
