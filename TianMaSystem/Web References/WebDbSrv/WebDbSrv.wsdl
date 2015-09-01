@@ -1,0 +1,4758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AAAAStr2HEXStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AAAAStr2HEXStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AAAAStr2HEXStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteErrorLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteErrorLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMenuPro_ALL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMenuPro_ALLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMenuPro_ALLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteSysLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="proID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteSysLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PrintBarcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="prtCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintBarcodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintHgz">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lst" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="prtCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qf" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrintHgzResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintHgzResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarcodeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listStr" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintBarcodeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintBarcodeListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKhList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetKhListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKhListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ATEST">
+        <s:complexType />
+      </s:element>
+      <s:element name="ATESTResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="APrintQrTEST">
+        <s:complexType />
+      </s:element>
+      <s:element name="APrintQrTESTResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSYMCBySYBH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SYBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSYMCBySYBHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSYMCBySYBHResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_CheckYCLRKLOTNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YCLRKLOTNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_CheckYCLRKLOTNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT03_CheckYCLRKLOTNOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetYCLRKLOTNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RKRQ" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetYCLRKLOTNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_GetYCLRKLOTNOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetYCLZK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rkrq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetYCLZKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_GetYCLZKResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerIP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCustomerIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_Save">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mFED010" type="tns:fed010" />
+            <s:element minOccurs="0" maxOccurs="1" name="mFED020" type="tns:ArrayOfFed020" />
+            <s:element minOccurs="0" maxOccurs="1" name="mFED030" type="tns:fed030" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="fed010">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RKRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLRKLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLLX" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DW" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RKSL" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYQX" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCPM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCGHS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CCYXQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BZ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DMQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFed020">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="fed020" nillable="true" type="tns:fed020" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="fed020">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YCLRKLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="XSQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DMQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="fed030">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YCLRKLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DW" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZKSL" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYQX" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZXPDRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CKQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DMQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HT03_SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_SaveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RKRQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_DeleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetYCLBH">
+        <s:complexType />
+      </s:element>
+      <s:element name="HT03_GetYCLBHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_GetYCLBHResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetZF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strYCLBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRKRQ" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetZFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_GetZFResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetCLBH_050">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strYCLBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GetCLBH_050Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_GetCLBH_050Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_Get_SYSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRKLOTNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_Get_SYSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT03_Get_SYSLResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT03_GET_KHXX">
+        <s:complexType />
+      </s:element>
+      <s:element name="HT03_GET_KHXXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT03_GET_KHXXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetYL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HLPCLOTNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetYLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_GetYLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetPHZZL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HLPCLOTNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetPHZZLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_GetPHZZLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetPCH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rq" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetPCHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_GetPCHResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetPHB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rq" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="cl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetPHBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_GetPHBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHBBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HLPCLOTNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_SearchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_PDYCLZK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="yclbh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_PDYCLZKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT04_PDYCLZKResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHLPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HLPCLOTNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHLPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckHLPCResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_Save">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mFED050" type="tns:fed050" />
+            <s:element minOccurs="0" maxOccurs="1" name="mFED060" type="tns:ArrayOfFed060" />
+            <s:element minOccurs="0" maxOccurs="1" name="mFED030" type="tns:ArrayOfFed030" />
+            <s:element minOccurs="0" maxOccurs="1" name="mPHBBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="fed050">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZF" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHZZL" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="HLPCLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LHQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YLLOTNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YLZL" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="JLSSZ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DMQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFed060">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="fed060" nillable="true" type="tns:fed060" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="fed060">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YCLRKLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHBBH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZL" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="DMQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFed030">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="fed030" nillable="true" type="tns:fed030" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HT04_SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_SaveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hlpclotno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_DeleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_UpdateLHQF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hlpclotno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LHQF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_UpdateLHQFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT04_UpdateLHQFResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_1_GetCLMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clbh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHRQ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_1_GetCLMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_1_GetCLMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetLHJJ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hlpclotno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_GetLHJJResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_GetLHJJResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_UpdateYL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hlpclotno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yllotno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ylsl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_UpdateYLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT04_UpdateYLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_GetSYMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_GetSYMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_4_GetSYMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_GetZkslByZL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zllotno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_GetZkslByZLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT04_4_GetZkslByZLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_Save">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:fed070" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="fed070">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="YCLRKLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZZL" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SYZL" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HT04_4_SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT04_4_SaveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zllotno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clbh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT04_4_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT04_4_DeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT05_GetYXTS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HLRY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT05_GetYXTSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT05_GetYXTSResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT06_GetLotNoInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLotNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT06_GetLotNoInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT06_GetLotNoInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT06_GetPhbInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLotNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT06_GetPhbInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT06_GetPhbInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT06_GetPhMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLotNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPhbbh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT06_GetPhMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT06_GetPhMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCLBH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HL_LotNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCLBHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCLBHResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRKZF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HL_LotNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRKZFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRKZFResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkPMPH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkPMPHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkPMPHResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFFD010">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mFFD010" type="tns:ffd010" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ffd010">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MAXXDZF" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MAXDDZF" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MAXXZF" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LHRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HLPCLOTNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JPRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HGSL" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BLSL" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="XDSLBZ" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="YRKID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RKZF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YLHR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LHBGZNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LHBGRQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DMQF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RLDMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXZBH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GXDMM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddFFD010Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFFD010Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsysDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="getsysDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getsysDateTimeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsEVE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistsEVEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistsEVEResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRKBiaoZhun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CLBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRKBiaoZhunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRKBiaoZhunResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_GetYCLMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lx" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_GetYCLMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT12_GetYCLMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_GetRTMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_GetRTMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT12_GetRTMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_HLPCLOTNOExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_HLPCLOTNOExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HT12_HLPCLOTNOExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_GetJPXX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT12_GetJPXXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT12_GetJPXXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT14_GetHgzBsrMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qrCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKHBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT14_GetHgzBsrMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT14_GetHgzBsrMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT14_GetHgzRohsMX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qrCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBZ" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKHBH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HT14_GetHgzRohsMXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HT14_GetHgzRohsMXResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="decimal" type="s:decimal" />
+      <s:element name="dateTime" type="s:dateTime" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AAAAStr2HEXStrSoapIn">
+    <wsdl:part name="parameters" element="tns:AAAAStr2HEXStr" />
+  </wsdl:message>
+  <wsdl:message name="AAAAStr2HEXStrSoapOut">
+    <wsdl:part name="parameters" element="tns:AAAAStr2HEXStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteErrorLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteErrorLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteErrorLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteErrorLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuPro_ALLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMenuPro_ALL" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuPro_ALLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMenuPro_ALLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteSysLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteSysLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteSysLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteSysLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintBarcode" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintHgzSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintHgz" />
+  </wsdl:message>
+  <wsdl:message name="PrintHgzSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintHgzResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarcodeListSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintBarcodeList" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarcodeListSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintBarcodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKhListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKhList" />
+  </wsdl:message>
+  <wsdl:message name="GetKhListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKhListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ATESTSoapIn">
+    <wsdl:part name="parameters" element="tns:ATEST" />
+  </wsdl:message>
+  <wsdl:message name="ATESTSoapOut">
+    <wsdl:part name="parameters" element="tns:ATESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="APrintQrTESTSoapIn">
+    <wsdl:part name="parameters" element="tns:APrintQrTEST" />
+  </wsdl:message>
+  <wsdl:message name="APrintQrTESTSoapOut">
+    <wsdl:part name="parameters" element="tns:APrintQrTESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSYMCBySYBHSoapIn">
+    <wsdl:part name="parameters" element="tns:getSYMCBySYBH" />
+  </wsdl:message>
+  <wsdl:message name="getSYMCBySYBHSoapOut">
+    <wsdl:part name="parameters" element="tns:getSYMCBySYBHResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_CheckYCLRKLOTNOSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_CheckYCLRKLOTNO" />
+  </wsdl:message>
+  <wsdl:message name="HT03_CheckYCLRKLOTNOSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_CheckYCLRKLOTNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLRKLOTNOSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_GetYCLRKLOTNO" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLRKLOTNOSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_GetYCLRKLOTNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLZKSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_GetYCLZK" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLZKSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_GetYCLZKResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerIP" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_Save" />
+  </wsdl:message>
+  <wsdl:message name="HT03_SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_Delete" />
+  </wsdl:message>
+  <wsdl:message name="HT03_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLBHSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_GetYCLBH" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLBHSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_GetYCLBHResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetZFSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_GetZF" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetZFSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_GetZFResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetCLBH_050SoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_GetCLBH_050" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetCLBH_050SoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_GetCLBH_050Response" />
+  </wsdl:message>
+  <wsdl:message name="HT03_Get_SYSLSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_Get_SYSL" />
+  </wsdl:message>
+  <wsdl:message name="HT03_Get_SYSLSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_Get_SYSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GET_KHXXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT03_GET_KHXX" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GET_KHXXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT03_GET_KHXXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetYLSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_GetYL" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetYLSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_GetYLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHZZLSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_GetPHZZL" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHZZLSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_GetPHZZLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPCHSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_GetPCH" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPCHSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_GetPCHResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHBSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_GetPHB" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHBSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_GetPHBResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_Search" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_PDYCLZKSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_PDYCLZK" />
+  </wsdl:message>
+  <wsdl:message name="HT04_PDYCLZKSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_PDYCLZKResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckHLPCSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckHLPC" />
+  </wsdl:message>
+  <wsdl:message name="CheckHLPCSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckHLPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_Save" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_Delete" />
+  </wsdl:message>
+  <wsdl:message name="HT04_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateLHQFSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_UpdateLHQF" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateLHQFSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_UpdateLHQFResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_1_GetCLMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_1_GetCLMX" />
+  </wsdl:message>
+  <wsdl:message name="HT04_1_GetCLMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_1_GetCLMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetLHJJSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_GetLHJJ" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetLHJJSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_GetLHJJResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateYLSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_UpdateYL" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateYLSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_UpdateYLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetSYMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_4_GetSYMX" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetSYMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_4_GetSYMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetZkslByZLSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_4_GetZkslByZL" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetZkslByZLSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_4_GetZkslByZLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_4_Save" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_4_SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:HT04_4_Delete" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:HT04_4_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT05_GetYXTSSoapIn">
+    <wsdl:part name="parameters" element="tns:HT05_GetYXTS" />
+  </wsdl:message>
+  <wsdl:message name="HT05_GetYXTSSoapOut">
+    <wsdl:part name="parameters" element="tns:HT05_GetYXTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetLotNoInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:HT06_GetLotNoInfo" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetLotNoInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:HT06_GetLotNoInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhbInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:HT06_GetPhbInfo" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhbInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:HT06_GetPhbInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT06_GetPhMX" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT06_GetPhMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCLBHSoapIn">
+    <wsdl:part name="parameters" element="tns:getCLBH" />
+  </wsdl:message>
+  <wsdl:message name="getCLBHSoapOut">
+    <wsdl:part name="parameters" element="tns:getCLBHResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRKZFSoapIn">
+    <wsdl:part name="parameters" element="tns:getRKZF" />
+  </wsdl:message>
+  <wsdl:message name="getRKZFSoapOut">
+    <wsdl:part name="parameters" element="tns:getRKZFResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkPMPHSoapIn">
+    <wsdl:part name="parameters" element="tns:checkPMPH" />
+  </wsdl:message>
+  <wsdl:message name="checkPMPHSoapOut">
+    <wsdl:part name="parameters" element="tns:checkPMPHResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFFD010SoapIn">
+    <wsdl:part name="parameters" element="tns:AddFFD010" />
+  </wsdl:message>
+  <wsdl:message name="AddFFD010SoapOut">
+    <wsdl:part name="parameters" element="tns:AddFFD010Response" />
+  </wsdl:message>
+  <wsdl:message name="getsysDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getsysDateTime" />
+  </wsdl:message>
+  <wsdl:message name="getsysDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getsysDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistsEVESoapIn">
+    <wsdl:part name="parameters" element="tns:ExistsEVE" />
+  </wsdl:message>
+  <wsdl:message name="ExistsEVESoapOut">
+    <wsdl:part name="parameters" element="tns:ExistsEVEResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRKBiaoZhunSoapIn">
+    <wsdl:part name="parameters" element="tns:getRKBiaoZhun" />
+  </wsdl:message>
+  <wsdl:message name="getRKBiaoZhunSoapOut">
+    <wsdl:part name="parameters" element="tns:getRKBiaoZhunResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetYCLMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT12_GetYCLMX" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetYCLMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT12_GetYCLMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetRTMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT12_GetRTMX" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetRTMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT12_GetRTMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT12_HLPCLOTNOExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:HT12_HLPCLOTNOExists" />
+  </wsdl:message>
+  <wsdl:message name="HT12_HLPCLOTNOExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:HT12_HLPCLOTNOExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetJPXXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT12_GetJPXX" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetJPXXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT12_GetJPXXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzBsrMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT14_GetHgzBsrMX" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzBsrMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT14_GetHgzBsrMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzRohsMXSoapIn">
+    <wsdl:part name="parameters" element="tns:HT14_GetHgzRohsMX" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzRohsMXSoapOut">
+    <wsdl:part name="parameters" element="tns:HT14_GetHgzRohsMXResponse" />
+  </wsdl:message>
+  <wsdl:message name="AAAAStr2HEXStrHttpGetIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AAAAStr2HEXStrHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteErrorLogHttpGetIn">
+    <wsdl:part name="proID" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteErrorLogHttpGetOut" />
+  <wsdl:message name="GetMenuPro_ALLHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuPro_ALLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WriteSysLogHttpGetIn">
+    <wsdl:part name="proID" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteSysLogHttpGetOut" />
+  <wsdl:message name="PrintBarcodeHttpGetIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="barCode" type="s:string" />
+    <wsdl:part name="prtCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarcodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKhListHttpGetIn" />
+  <wsdl:message name="GetKhListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ATESTHttpGetIn" />
+  <wsdl:message name="ATESTHttpGetOut" />
+  <wsdl:message name="APrintQrTESTHttpGetIn" />
+  <wsdl:message name="APrintQrTESTHttpGetOut" />
+  <wsdl:message name="getSYMCBySYBHHttpGetIn">
+    <wsdl:part name="SYBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getSYMCBySYBHHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_CheckYCLRKLOTNOHttpGetIn">
+    <wsdl:part name="YCLRKLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_CheckYCLRKLOTNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLRKLOTNOHttpGetIn">
+    <wsdl:part name="RKRQ" type="s:string" />
+    <wsdl:part name="YCLBH" type="s:string" />
+    <wsdl:part name="ZF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLRKLOTNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLZKHttpGetIn">
+    <wsdl:part name="YCLBH" type="s:string" />
+    <wsdl:part name="rkrq" type="s:string" />
+    <wsdl:part name="zf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLZKHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerIPHttpGetIn" />
+  <wsdl:message name="GetCustomerIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_DeleteHttpGetIn">
+    <wsdl:part name="RKRQ" type="s:string" />
+    <wsdl:part name="YCLBH" type="s:string" />
+    <wsdl:part name="ZF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_DeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLBHHttpGetIn" />
+  <wsdl:message name="HT03_GetYCLBHHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetZFHttpGetIn">
+    <wsdl:part name="strYCLBH" type="s:string" />
+    <wsdl:part name="strRKRQ" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetZFHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetCLBH_050HttpGetIn">
+    <wsdl:part name="strYCLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetCLBH_050HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_Get_SYSLHttpGetIn">
+    <wsdl:part name="strRKLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_Get_SYSLHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GET_KHXXHttpGetIn" />
+  <wsdl:message name="HT03_GET_KHXXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetYLHttpGetIn">
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetYLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHZZLHttpGetIn">
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHZZLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPCHHttpGetIn">
+    <wsdl:part name="rq" type="s:string" />
+    <wsdl:part name="cl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPCHHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHBHttpGetIn">
+    <wsdl:part name="rq" type="s:string" />
+    <wsdl:part name="cl" type="s:string" />
+    <wsdl:part name="pc" type="s:string" />
+    <wsdl:part name="zl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHBHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SearchHttpGetIn">
+    <wsdl:part name="CLBH" type="s:string" />
+    <wsdl:part name="PHBBH" type="s:string" />
+    <wsdl:part name="SL" type="s:string" />
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SearchHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_PDYCLZKHttpGetIn">
+    <wsdl:part name="yclbh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_PDYCLZKHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckHLPCHttpGetIn">
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckHLPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT04_DeleteHttpGetIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_DeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateLHQFHttpGetIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+    <wsdl:part name="LHQF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateLHQFHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT04_1_GetCLMXHttpGetIn">
+    <wsdl:part name="clbh" type="s:string" />
+    <wsdl:part name="phb" type="s:string" />
+    <wsdl:part name="PHRQ" type="s:string" />
+    <wsdl:part name="ZF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_1_GetCLMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetLHJJHttpGetIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetLHJJHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateYLHttpGetIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+    <wsdl:part name="yllotno" type="s:string" />
+    <wsdl:part name="ylsl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateYLHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetSYMXHttpGetIn">
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetSYMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetZkslByZLHttpGetIn">
+    <wsdl:part name="zllotno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetZkslByZLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_DeleteHttpGetIn">
+    <wsdl:part name="zllotno" type="s:string" />
+    <wsdl:part name="clbh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_DeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT05_GetYXTSHttpGetIn">
+    <wsdl:part name="CLBH" type="s:string" />
+    <wsdl:part name="HLRY" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT05_GetYXTSHttpGetOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetLotNoInfoHttpGetIn">
+    <wsdl:part name="strLotNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetLotNoInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhbInfoHttpGetIn">
+    <wsdl:part name="strLotNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhbInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhMXHttpGetIn">
+    <wsdl:part name="strLotNo" type="s:string" />
+    <wsdl:part name="strPhbbh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getCLBHHttpGetIn">
+    <wsdl:part name="HL_LotNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCLBHHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getRKZFHttpGetIn">
+    <wsdl:part name="HL_LotNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRKZFHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="checkPMPHHttpGetIn">
+    <wsdl:part name="PM" type="s:string" />
+    <wsdl:part name="PH" type="s:string" />
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkPMPHHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getsysDateTimeHttpGetIn" />
+  <wsdl:message name="getsysDateTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ExistsEVEHttpGetIn">
+    <wsdl:part name="PM" type="s:string" />
+    <wsdl:part name="PH" type="s:string" />
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExistsEVEHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getRKBiaoZhunHttpGetIn">
+    <wsdl:part name="PM" type="s:string" />
+    <wsdl:part name="PH" type="s:string" />
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRKBiaoZhunHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetYCLMXHttpGetIn">
+    <wsdl:part name="barCode" type="s:string" />
+    <wsdl:part name="lx" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetYCLMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetRTMXHttpGetIn">
+    <wsdl:part name="barCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetRTMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT12_HLPCLOTNOExistsHttpGetIn">
+    <wsdl:part name="barCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_HLPCLOTNOExistsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetJPXXHttpGetIn">
+    <wsdl:part name="barCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetJPXXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzBsrMXHttpGetIn">
+    <wsdl:part name="qrCode" type="s:string" />
+    <wsdl:part name="strKHBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzBsrMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzRohsMXHttpGetIn">
+    <wsdl:part name="qrCode" type="s:string" />
+    <wsdl:part name="strBZ" type="s:string" />
+    <wsdl:part name="strKHBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzRohsMXHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AAAAStr2HEXStrHttpPostIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AAAAStr2HEXStrHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteErrorLogHttpPostIn">
+    <wsdl:part name="proID" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteErrorLogHttpPostOut" />
+  <wsdl:message name="GetMenuPro_ALLHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMenuPro_ALLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WriteSysLogHttpPostIn">
+    <wsdl:part name="proID" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+    <wsdl:part name="userID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteSysLogHttpPostOut" />
+  <wsdl:message name="PrintBarcodeHttpPostIn">
+    <wsdl:part name="uid" type="s:string" />
+    <wsdl:part name="barCode" type="s:string" />
+    <wsdl:part name="prtCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintBarcodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetKhListHttpPostIn" />
+  <wsdl:message name="GetKhListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ATESTHttpPostIn" />
+  <wsdl:message name="ATESTHttpPostOut" />
+  <wsdl:message name="APrintQrTESTHttpPostIn" />
+  <wsdl:message name="APrintQrTESTHttpPostOut" />
+  <wsdl:message name="getSYMCBySYBHHttpPostIn">
+    <wsdl:part name="SYBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getSYMCBySYBHHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_CheckYCLRKLOTNOHttpPostIn">
+    <wsdl:part name="YCLRKLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_CheckYCLRKLOTNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLRKLOTNOHttpPostIn">
+    <wsdl:part name="RKRQ" type="s:string" />
+    <wsdl:part name="YCLBH" type="s:string" />
+    <wsdl:part name="ZF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLRKLOTNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLZKHttpPostIn">
+    <wsdl:part name="YCLBH" type="s:string" />
+    <wsdl:part name="rkrq" type="s:string" />
+    <wsdl:part name="zf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLZKHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerIPHttpPostIn" />
+  <wsdl:message name="GetCustomerIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_DeleteHttpPostIn">
+    <wsdl:part name="RKRQ" type="s:string" />
+    <wsdl:part name="YCLBH" type="s:string" />
+    <wsdl:part name="ZF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_DeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetYCLBHHttpPostIn" />
+  <wsdl:message name="HT03_GetYCLBHHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetZFHttpPostIn">
+    <wsdl:part name="strYCLBH" type="s:string" />
+    <wsdl:part name="strRKRQ" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetZFHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetCLBH_050HttpPostIn">
+    <wsdl:part name="strYCLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GetCLBH_050HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT03_Get_SYSLHttpPostIn">
+    <wsdl:part name="strRKLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT03_Get_SYSLHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="HT03_GET_KHXXHttpPostIn" />
+  <wsdl:message name="HT03_GET_KHXXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetYLHttpPostIn">
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetYLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHZZLHttpPostIn">
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHZZLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPCHHttpPostIn">
+    <wsdl:part name="rq" type="s:string" />
+    <wsdl:part name="cl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPCHHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHBHttpPostIn">
+    <wsdl:part name="rq" type="s:string" />
+    <wsdl:part name="cl" type="s:string" />
+    <wsdl:part name="pc" type="s:string" />
+    <wsdl:part name="zl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetPHBHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SearchHttpPostIn">
+    <wsdl:part name="CLBH" type="s:string" />
+    <wsdl:part name="PHBBH" type="s:string" />
+    <wsdl:part name="SL" type="s:string" />
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_SearchHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_PDYCLZKHttpPostIn">
+    <wsdl:part name="yclbh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_PDYCLZKHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckHLPCHttpPostIn">
+    <wsdl:part name="HLPCLOTNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckHLPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT04_DeleteHttpPostIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_DeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateLHQFHttpPostIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+    <wsdl:part name="LHQF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateLHQFHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT04_1_GetCLMXHttpPostIn">
+    <wsdl:part name="clbh" type="s:string" />
+    <wsdl:part name="phb" type="s:string" />
+    <wsdl:part name="PHRQ" type="s:string" />
+    <wsdl:part name="ZF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_1_GetCLMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetLHJJHttpPostIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_GetLHJJHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateYLHttpPostIn">
+    <wsdl:part name="hlpclotno" type="s:string" />
+    <wsdl:part name="yllotno" type="s:string" />
+    <wsdl:part name="ylsl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_UpdateYLHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetSYMXHttpPostIn">
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetSYMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetZkslByZLHttpPostIn">
+    <wsdl:part name="zllotno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_GetZkslByZLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_DeleteHttpPostIn">
+    <wsdl:part name="zllotno" type="s:string" />
+    <wsdl:part name="clbh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT04_4_DeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT05_GetYXTSHttpPostIn">
+    <wsdl:part name="CLBH" type="s:string" />
+    <wsdl:part name="HLRY" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT05_GetYXTSHttpPostOut">
+    <wsdl:part name="Body" element="tns:dateTime" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetLotNoInfoHttpPostIn">
+    <wsdl:part name="strLotNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetLotNoInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhbInfoHttpPostIn">
+    <wsdl:part name="strLotNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhbInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhMXHttpPostIn">
+    <wsdl:part name="strLotNo" type="s:string" />
+    <wsdl:part name="strPhbbh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT06_GetPhMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getCLBHHttpPostIn">
+    <wsdl:part name="HL_LotNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCLBHHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getRKZFHttpPostIn">
+    <wsdl:part name="HL_LotNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRKZFHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="checkPMPHHttpPostIn">
+    <wsdl:part name="PM" type="s:string" />
+    <wsdl:part name="PH" type="s:string" />
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkPMPHHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getsysDateTimeHttpPostIn" />
+  <wsdl:message name="getsysDateTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ExistsEVEHttpPostIn">
+    <wsdl:part name="PM" type="s:string" />
+    <wsdl:part name="PH" type="s:string" />
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExistsEVEHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getRKBiaoZhunHttpPostIn">
+    <wsdl:part name="PM" type="s:string" />
+    <wsdl:part name="PH" type="s:string" />
+    <wsdl:part name="CLBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRKBiaoZhunHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetYCLMXHttpPostIn">
+    <wsdl:part name="barCode" type="s:string" />
+    <wsdl:part name="lx" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetYCLMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetRTMXHttpPostIn">
+    <wsdl:part name="barCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetRTMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT12_HLPCLOTNOExistsHttpPostIn">
+    <wsdl:part name="barCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_HLPCLOTNOExistsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetJPXXHttpPostIn">
+    <wsdl:part name="barCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT12_GetJPXXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzBsrMXHttpPostIn">
+    <wsdl:part name="qrCode" type="s:string" />
+    <wsdl:part name="strKHBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzBsrMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzRohsMXHttpPostIn">
+    <wsdl:part name="qrCode" type="s:string" />
+    <wsdl:part name="strBZ" type="s:string" />
+    <wsdl:part name="strKHBH" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HT14_GetHgzRohsMXHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="WebDbSrvSoap">
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <wsdl:input message="tns:AAAAStr2HEXStrSoapIn" />
+      <wsdl:output message="tns:AAAAStr2HEXStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <wsdl:input message="tns:WriteErrorLogSoapIn" />
+      <wsdl:output message="tns:WriteErrorLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <wsdl:input message="tns:GetMenuPro_ALLSoapIn" />
+      <wsdl:output message="tns:GetMenuPro_ALLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input message="tns:CheckLoginSoapIn" />
+      <wsdl:output message="tns:CheckLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <wsdl:input message="tns:WriteSysLogSoapIn" />
+      <wsdl:output message="tns:WriteSysLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <wsdl:input message="tns:PrintBarcodeSoapIn" />
+      <wsdl:output message="tns:PrintBarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintHgz">
+      <wsdl:input message="tns:PrintHgzSoapIn" />
+      <wsdl:output message="tns:PrintHgzSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcodeList">
+      <wsdl:input message="tns:PrintBarcodeListSoapIn" />
+      <wsdl:output message="tns:PrintBarcodeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <wsdl:input message="tns:GetKhListSoapIn" />
+      <wsdl:output message="tns:GetKhListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <wsdl:input message="tns:ATESTSoapIn" />
+      <wsdl:output message="tns:ATESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <wsdl:input message="tns:APrintQrTESTSoapIn" />
+      <wsdl:output message="tns:APrintQrTESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <wsdl:input message="tns:getSYMCBySYBHSoapIn" />
+      <wsdl:output message="tns:getSYMCBySYBHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <wsdl:input message="tns:HT03_CheckYCLRKLOTNOSoapIn" />
+      <wsdl:output message="tns:HT03_CheckYCLRKLOTNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <wsdl:input message="tns:HT03_GetYCLRKLOTNOSoapIn" />
+      <wsdl:output message="tns:HT03_GetYCLRKLOTNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <wsdl:input message="tns:HT03_GetYCLZKSoapIn" />
+      <wsdl:output message="tns:HT03_GetYCLZKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <wsdl:input message="tns:GetCustomerIPSoapIn" />
+      <wsdl:output message="tns:GetCustomerIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Save">
+      <wsdl:input message="tns:HT03_SaveSoapIn" />
+      <wsdl:output message="tns:HT03_SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <wsdl:input message="tns:HT03_DeleteSoapIn" />
+      <wsdl:output message="tns:HT03_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <wsdl:input message="tns:HT03_GetYCLBHSoapIn" />
+      <wsdl:output message="tns:HT03_GetYCLBHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <wsdl:input message="tns:HT03_GetZFSoapIn" />
+      <wsdl:output message="tns:HT03_GetZFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <wsdl:input message="tns:HT03_GetCLBH_050SoapIn" />
+      <wsdl:output message="tns:HT03_GetCLBH_050SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <wsdl:input message="tns:HT03_Get_SYSLSoapIn" />
+      <wsdl:output message="tns:HT03_Get_SYSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <wsdl:input message="tns:HT03_GET_KHXXSoapIn" />
+      <wsdl:output message="tns:HT03_GET_KHXXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <wsdl:input message="tns:HT04_GetYLSoapIn" />
+      <wsdl:output message="tns:HT04_GetYLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <wsdl:input message="tns:HT04_GetPHZZLSoapIn" />
+      <wsdl:output message="tns:HT04_GetPHZZLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <wsdl:input message="tns:HT04_GetPCHSoapIn" />
+      <wsdl:output message="tns:HT04_GetPCHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <wsdl:input message="tns:HT04_GetPHBSoapIn" />
+      <wsdl:output message="tns:HT04_GetPHBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <wsdl:input message="tns:HT04_SearchSoapIn" />
+      <wsdl:output message="tns:HT04_SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <wsdl:input message="tns:HT04_PDYCLZKSoapIn" />
+      <wsdl:output message="tns:HT04_PDYCLZKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <wsdl:input message="tns:CheckHLPCSoapIn" />
+      <wsdl:output message="tns:CheckHLPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Save">
+      <wsdl:input message="tns:HT04_SaveSoapIn" />
+      <wsdl:output message="tns:HT04_SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <wsdl:input message="tns:HT04_DeleteSoapIn" />
+      <wsdl:output message="tns:HT04_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <wsdl:input message="tns:HT04_UpdateLHQFSoapIn" />
+      <wsdl:output message="tns:HT04_UpdateLHQFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <wsdl:input message="tns:HT04_1_GetCLMXSoapIn" />
+      <wsdl:output message="tns:HT04_1_GetCLMXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <wsdl:input message="tns:HT04_GetLHJJSoapIn" />
+      <wsdl:output message="tns:HT04_GetLHJJSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <wsdl:input message="tns:HT04_UpdateYLSoapIn" />
+      <wsdl:output message="tns:HT04_UpdateYLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <wsdl:input message="tns:HT04_4_GetSYMXSoapIn" />
+      <wsdl:output message="tns:HT04_4_GetSYMXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <wsdl:input message="tns:HT04_4_GetZkslByZLSoapIn" />
+      <wsdl:output message="tns:HT04_4_GetZkslByZLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Save">
+      <wsdl:input message="tns:HT04_4_SaveSoapIn" />
+      <wsdl:output message="tns:HT04_4_SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <wsdl:input message="tns:HT04_4_DeleteSoapIn" />
+      <wsdl:output message="tns:HT04_4_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <wsdl:input message="tns:HT05_GetYXTSSoapIn" />
+      <wsdl:output message="tns:HT05_GetYXTSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <wsdl:input message="tns:HT06_GetLotNoInfoSoapIn" />
+      <wsdl:output message="tns:HT06_GetLotNoInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <wsdl:input message="tns:HT06_GetPhbInfoSoapIn" />
+      <wsdl:output message="tns:HT06_GetPhbInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <wsdl:input message="tns:HT06_GetPhMXSoapIn" />
+      <wsdl:output message="tns:HT06_GetPhMXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <wsdl:input message="tns:getCLBHSoapIn" />
+      <wsdl:output message="tns:getCLBHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <wsdl:input message="tns:getRKZFSoapIn" />
+      <wsdl:output message="tns:getRKZFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <wsdl:input message="tns:checkPMPHSoapIn" />
+      <wsdl:output message="tns:checkPMPHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFFD010">
+      <wsdl:input message="tns:AddFFD010SoapIn" />
+      <wsdl:output message="tns:AddFFD010SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <wsdl:input message="tns:getsysDateTimeSoapIn" />
+      <wsdl:output message="tns:getsysDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <wsdl:input message="tns:ExistsEVESoapIn" />
+      <wsdl:output message="tns:ExistsEVESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <wsdl:input message="tns:getRKBiaoZhunSoapIn" />
+      <wsdl:output message="tns:getRKBiaoZhunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <wsdl:input message="tns:HT12_GetYCLMXSoapIn" />
+      <wsdl:output message="tns:HT12_GetYCLMXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <wsdl:input message="tns:HT12_GetRTMXSoapIn" />
+      <wsdl:output message="tns:HT12_GetRTMXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <wsdl:input message="tns:HT12_HLPCLOTNOExistsSoapIn" />
+      <wsdl:output message="tns:HT12_HLPCLOTNOExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <wsdl:input message="tns:HT12_GetJPXXSoapIn" />
+      <wsdl:output message="tns:HT12_GetJPXXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <wsdl:input message="tns:HT14_GetHgzBsrMXSoapIn" />
+      <wsdl:output message="tns:HT14_GetHgzBsrMXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <wsdl:input message="tns:HT14_GetHgzRohsMXSoapIn" />
+      <wsdl:output message="tns:HT14_GetHgzRohsMXSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebDbSrvHttpGet">
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <wsdl:input message="tns:AAAAStr2HEXStrHttpGetIn" />
+      <wsdl:output message="tns:AAAAStr2HEXStrHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <wsdl:input message="tns:WriteErrorLogHttpGetIn" />
+      <wsdl:output message="tns:WriteErrorLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <wsdl:input message="tns:GetMenuPro_ALLHttpGetIn" />
+      <wsdl:output message="tns:GetMenuPro_ALLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input message="tns:CheckLoginHttpGetIn" />
+      <wsdl:output message="tns:CheckLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <wsdl:input message="tns:WriteSysLogHttpGetIn" />
+      <wsdl:output message="tns:WriteSysLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <wsdl:input message="tns:PrintBarcodeHttpGetIn" />
+      <wsdl:output message="tns:PrintBarcodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <wsdl:input message="tns:GetKhListHttpGetIn" />
+      <wsdl:output message="tns:GetKhListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <wsdl:input message="tns:ATESTHttpGetIn" />
+      <wsdl:output message="tns:ATESTHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <wsdl:input message="tns:APrintQrTESTHttpGetIn" />
+      <wsdl:output message="tns:APrintQrTESTHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <wsdl:input message="tns:getSYMCBySYBHHttpGetIn" />
+      <wsdl:output message="tns:getSYMCBySYBHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <wsdl:input message="tns:HT03_CheckYCLRKLOTNOHttpGetIn" />
+      <wsdl:output message="tns:HT03_CheckYCLRKLOTNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <wsdl:input message="tns:HT03_GetYCLRKLOTNOHttpGetIn" />
+      <wsdl:output message="tns:HT03_GetYCLRKLOTNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <wsdl:input message="tns:HT03_GetYCLZKHttpGetIn" />
+      <wsdl:output message="tns:HT03_GetYCLZKHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <wsdl:input message="tns:GetCustomerIPHttpGetIn" />
+      <wsdl:output message="tns:GetCustomerIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <wsdl:input message="tns:HT03_DeleteHttpGetIn" />
+      <wsdl:output message="tns:HT03_DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <wsdl:input message="tns:HT03_GetYCLBHHttpGetIn" />
+      <wsdl:output message="tns:HT03_GetYCLBHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <wsdl:input message="tns:HT03_GetZFHttpGetIn" />
+      <wsdl:output message="tns:HT03_GetZFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <wsdl:input message="tns:HT03_GetCLBH_050HttpGetIn" />
+      <wsdl:output message="tns:HT03_GetCLBH_050HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <wsdl:input message="tns:HT03_Get_SYSLHttpGetIn" />
+      <wsdl:output message="tns:HT03_Get_SYSLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <wsdl:input message="tns:HT03_GET_KHXXHttpGetIn" />
+      <wsdl:output message="tns:HT03_GET_KHXXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <wsdl:input message="tns:HT04_GetYLHttpGetIn" />
+      <wsdl:output message="tns:HT04_GetYLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <wsdl:input message="tns:HT04_GetPHZZLHttpGetIn" />
+      <wsdl:output message="tns:HT04_GetPHZZLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <wsdl:input message="tns:HT04_GetPCHHttpGetIn" />
+      <wsdl:output message="tns:HT04_GetPCHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <wsdl:input message="tns:HT04_GetPHBHttpGetIn" />
+      <wsdl:output message="tns:HT04_GetPHBHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <wsdl:input message="tns:HT04_SearchHttpGetIn" />
+      <wsdl:output message="tns:HT04_SearchHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <wsdl:input message="tns:HT04_PDYCLZKHttpGetIn" />
+      <wsdl:output message="tns:HT04_PDYCLZKHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <wsdl:input message="tns:CheckHLPCHttpGetIn" />
+      <wsdl:output message="tns:CheckHLPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <wsdl:input message="tns:HT04_DeleteHttpGetIn" />
+      <wsdl:output message="tns:HT04_DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <wsdl:input message="tns:HT04_UpdateLHQFHttpGetIn" />
+      <wsdl:output message="tns:HT04_UpdateLHQFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <wsdl:input message="tns:HT04_1_GetCLMXHttpGetIn" />
+      <wsdl:output message="tns:HT04_1_GetCLMXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <wsdl:input message="tns:HT04_GetLHJJHttpGetIn" />
+      <wsdl:output message="tns:HT04_GetLHJJHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <wsdl:input message="tns:HT04_UpdateYLHttpGetIn" />
+      <wsdl:output message="tns:HT04_UpdateYLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <wsdl:input message="tns:HT04_4_GetSYMXHttpGetIn" />
+      <wsdl:output message="tns:HT04_4_GetSYMXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <wsdl:input message="tns:HT04_4_GetZkslByZLHttpGetIn" />
+      <wsdl:output message="tns:HT04_4_GetZkslByZLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <wsdl:input message="tns:HT04_4_DeleteHttpGetIn" />
+      <wsdl:output message="tns:HT04_4_DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <wsdl:input message="tns:HT05_GetYXTSHttpGetIn" />
+      <wsdl:output message="tns:HT05_GetYXTSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <wsdl:input message="tns:HT06_GetLotNoInfoHttpGetIn" />
+      <wsdl:output message="tns:HT06_GetLotNoInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <wsdl:input message="tns:HT06_GetPhbInfoHttpGetIn" />
+      <wsdl:output message="tns:HT06_GetPhbInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <wsdl:input message="tns:HT06_GetPhMXHttpGetIn" />
+      <wsdl:output message="tns:HT06_GetPhMXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <wsdl:input message="tns:getCLBHHttpGetIn" />
+      <wsdl:output message="tns:getCLBHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <wsdl:input message="tns:getRKZFHttpGetIn" />
+      <wsdl:output message="tns:getRKZFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <wsdl:input message="tns:checkPMPHHttpGetIn" />
+      <wsdl:output message="tns:checkPMPHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <wsdl:input message="tns:getsysDateTimeHttpGetIn" />
+      <wsdl:output message="tns:getsysDateTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <wsdl:input message="tns:ExistsEVEHttpGetIn" />
+      <wsdl:output message="tns:ExistsEVEHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <wsdl:input message="tns:getRKBiaoZhunHttpGetIn" />
+      <wsdl:output message="tns:getRKBiaoZhunHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <wsdl:input message="tns:HT12_GetYCLMXHttpGetIn" />
+      <wsdl:output message="tns:HT12_GetYCLMXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <wsdl:input message="tns:HT12_GetRTMXHttpGetIn" />
+      <wsdl:output message="tns:HT12_GetRTMXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <wsdl:input message="tns:HT12_HLPCLOTNOExistsHttpGetIn" />
+      <wsdl:output message="tns:HT12_HLPCLOTNOExistsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <wsdl:input message="tns:HT12_GetJPXXHttpGetIn" />
+      <wsdl:output message="tns:HT12_GetJPXXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <wsdl:input message="tns:HT14_GetHgzBsrMXHttpGetIn" />
+      <wsdl:output message="tns:HT14_GetHgzBsrMXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <wsdl:input message="tns:HT14_GetHgzRohsMXHttpGetIn" />
+      <wsdl:output message="tns:HT14_GetHgzRohsMXHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebDbSrvHttpPost">
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <wsdl:input message="tns:AAAAStr2HEXStrHttpPostIn" />
+      <wsdl:output message="tns:AAAAStr2HEXStrHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <wsdl:input message="tns:WriteErrorLogHttpPostIn" />
+      <wsdl:output message="tns:WriteErrorLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <wsdl:input message="tns:GetMenuPro_ALLHttpPostIn" />
+      <wsdl:output message="tns:GetMenuPro_ALLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input message="tns:CheckLoginHttpPostIn" />
+      <wsdl:output message="tns:CheckLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <wsdl:input message="tns:WriteSysLogHttpPostIn" />
+      <wsdl:output message="tns:WriteSysLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <wsdl:input message="tns:PrintBarcodeHttpPostIn" />
+      <wsdl:output message="tns:PrintBarcodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <wsdl:input message="tns:GetKhListHttpPostIn" />
+      <wsdl:output message="tns:GetKhListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <wsdl:input message="tns:ATESTHttpPostIn" />
+      <wsdl:output message="tns:ATESTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <wsdl:input message="tns:APrintQrTESTHttpPostIn" />
+      <wsdl:output message="tns:APrintQrTESTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <wsdl:input message="tns:getSYMCBySYBHHttpPostIn" />
+      <wsdl:output message="tns:getSYMCBySYBHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <wsdl:input message="tns:HT03_CheckYCLRKLOTNOHttpPostIn" />
+      <wsdl:output message="tns:HT03_CheckYCLRKLOTNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <wsdl:input message="tns:HT03_GetYCLRKLOTNOHttpPostIn" />
+      <wsdl:output message="tns:HT03_GetYCLRKLOTNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <wsdl:input message="tns:HT03_GetYCLZKHttpPostIn" />
+      <wsdl:output message="tns:HT03_GetYCLZKHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <wsdl:input message="tns:GetCustomerIPHttpPostIn" />
+      <wsdl:output message="tns:GetCustomerIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <wsdl:input message="tns:HT03_DeleteHttpPostIn" />
+      <wsdl:output message="tns:HT03_DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <wsdl:input message="tns:HT03_GetYCLBHHttpPostIn" />
+      <wsdl:output message="tns:HT03_GetYCLBHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <wsdl:input message="tns:HT03_GetZFHttpPostIn" />
+      <wsdl:output message="tns:HT03_GetZFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <wsdl:input message="tns:HT03_GetCLBH_050HttpPostIn" />
+      <wsdl:output message="tns:HT03_GetCLBH_050HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <wsdl:input message="tns:HT03_Get_SYSLHttpPostIn" />
+      <wsdl:output message="tns:HT03_Get_SYSLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <wsdl:input message="tns:HT03_GET_KHXXHttpPostIn" />
+      <wsdl:output message="tns:HT03_GET_KHXXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <wsdl:input message="tns:HT04_GetYLHttpPostIn" />
+      <wsdl:output message="tns:HT04_GetYLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <wsdl:input message="tns:HT04_GetPHZZLHttpPostIn" />
+      <wsdl:output message="tns:HT04_GetPHZZLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <wsdl:input message="tns:HT04_GetPCHHttpPostIn" />
+      <wsdl:output message="tns:HT04_GetPCHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <wsdl:input message="tns:HT04_GetPHBHttpPostIn" />
+      <wsdl:output message="tns:HT04_GetPHBHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <wsdl:input message="tns:HT04_SearchHttpPostIn" />
+      <wsdl:output message="tns:HT04_SearchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <wsdl:input message="tns:HT04_PDYCLZKHttpPostIn" />
+      <wsdl:output message="tns:HT04_PDYCLZKHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <wsdl:input message="tns:CheckHLPCHttpPostIn" />
+      <wsdl:output message="tns:CheckHLPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <wsdl:input message="tns:HT04_DeleteHttpPostIn" />
+      <wsdl:output message="tns:HT04_DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <wsdl:input message="tns:HT04_UpdateLHQFHttpPostIn" />
+      <wsdl:output message="tns:HT04_UpdateLHQFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <wsdl:input message="tns:HT04_1_GetCLMXHttpPostIn" />
+      <wsdl:output message="tns:HT04_1_GetCLMXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <wsdl:input message="tns:HT04_GetLHJJHttpPostIn" />
+      <wsdl:output message="tns:HT04_GetLHJJHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <wsdl:input message="tns:HT04_UpdateYLHttpPostIn" />
+      <wsdl:output message="tns:HT04_UpdateYLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <wsdl:input message="tns:HT04_4_GetSYMXHttpPostIn" />
+      <wsdl:output message="tns:HT04_4_GetSYMXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <wsdl:input message="tns:HT04_4_GetZkslByZLHttpPostIn" />
+      <wsdl:output message="tns:HT04_4_GetZkslByZLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <wsdl:input message="tns:HT04_4_DeleteHttpPostIn" />
+      <wsdl:output message="tns:HT04_4_DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <wsdl:input message="tns:HT05_GetYXTSHttpPostIn" />
+      <wsdl:output message="tns:HT05_GetYXTSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <wsdl:input message="tns:HT06_GetLotNoInfoHttpPostIn" />
+      <wsdl:output message="tns:HT06_GetLotNoInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <wsdl:input message="tns:HT06_GetPhbInfoHttpPostIn" />
+      <wsdl:output message="tns:HT06_GetPhbInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <wsdl:input message="tns:HT06_GetPhMXHttpPostIn" />
+      <wsdl:output message="tns:HT06_GetPhMXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <wsdl:input message="tns:getCLBHHttpPostIn" />
+      <wsdl:output message="tns:getCLBHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <wsdl:input message="tns:getRKZFHttpPostIn" />
+      <wsdl:output message="tns:getRKZFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <wsdl:input message="tns:checkPMPHHttpPostIn" />
+      <wsdl:output message="tns:checkPMPHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <wsdl:input message="tns:getsysDateTimeHttpPostIn" />
+      <wsdl:output message="tns:getsysDateTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <wsdl:input message="tns:ExistsEVEHttpPostIn" />
+      <wsdl:output message="tns:ExistsEVEHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <wsdl:input message="tns:getRKBiaoZhunHttpPostIn" />
+      <wsdl:output message="tns:getRKBiaoZhunHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <wsdl:input message="tns:HT12_GetYCLMXHttpPostIn" />
+      <wsdl:output message="tns:HT12_GetYCLMXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <wsdl:input message="tns:HT12_GetRTMXHttpPostIn" />
+      <wsdl:output message="tns:HT12_GetRTMXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <wsdl:input message="tns:HT12_HLPCLOTNOExistsHttpPostIn" />
+      <wsdl:output message="tns:HT12_HLPCLOTNOExistsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <wsdl:input message="tns:HT12_GetJPXXHttpPostIn" />
+      <wsdl:output message="tns:HT12_GetJPXXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <wsdl:input message="tns:HT14_GetHgzBsrMXHttpPostIn" />
+      <wsdl:output message="tns:HT14_GetHgzBsrMXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <wsdl:input message="tns:HT14_GetHgzRohsMXHttpPostIn" />
+      <wsdl:output message="tns:HT14_GetHgzRohsMXHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebDbSrvSoap" type="tns:WebDbSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <soap:operation soapAction="http://tempuri.org/AAAAStr2HEXStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <soap:operation soapAction="http://tempuri.org/WriteErrorLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <soap:operation soapAction="http://tempuri.org/GetMenuPro_ALL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap:operation soapAction="http://tempuri.org/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <soap:operation soapAction="http://tempuri.org/WriteSysLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <soap:operation soapAction="http://tempuri.org/PrintBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintHgz">
+      <soap:operation soapAction="http://tempuri.org/PrintHgz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcodeList">
+      <soap:operation soapAction="http://tempuri.org/PrintBarcodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <soap:operation soapAction="http://tempuri.org/GetKhList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <soap:operation soapAction="http://tempuri.org/ATEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <soap:operation soapAction="http://tempuri.org/APrintQrTEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <soap:operation soapAction="http://tempuri.org/getSYMCBySYBH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <soap:operation soapAction="http://tempuri.org/HT03_CheckYCLRKLOTNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <soap:operation soapAction="http://tempuri.org/HT03_GetYCLRKLOTNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <soap:operation soapAction="http://tempuri.org/HT03_GetYCLZK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Save">
+      <soap:operation soapAction="http://tempuri.org/HT03_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <soap:operation soapAction="http://tempuri.org/HT03_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <soap:operation soapAction="http://tempuri.org/HT03_GetYCLBH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <soap:operation soapAction="http://tempuri.org/HT03_GetZF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <soap:operation soapAction="http://tempuri.org/HT03_GetCLBH_050" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <soap:operation soapAction="http://tempuri.org/HT03_Get_SYSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <soap:operation soapAction="http://tempuri.org/HT03_GET_KHXX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <soap:operation soapAction="http://tempuri.org/HT04_GetYL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <soap:operation soapAction="http://tempuri.org/HT04_GetPHZZL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <soap:operation soapAction="http://tempuri.org/HT04_GetPCH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <soap:operation soapAction="http://tempuri.org/HT04_GetPHB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <soap:operation soapAction="http://tempuri.org/HT04_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <soap:operation soapAction="http://tempuri.org/HT04_PDYCLZK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <soap:operation soapAction="http://tempuri.org/CheckHLPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Save">
+      <soap:operation soapAction="http://tempuri.org/HT04_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <soap:operation soapAction="http://tempuri.org/HT04_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <soap:operation soapAction="http://tempuri.org/HT04_UpdateLHQF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <soap:operation soapAction="http://tempuri.org/HT04_1_GetCLMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <soap:operation soapAction="http://tempuri.org/HT04_GetLHJJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <soap:operation soapAction="http://tempuri.org/HT04_UpdateYL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <soap:operation soapAction="http://tempuri.org/HT04_4_GetSYMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <soap:operation soapAction="http://tempuri.org/HT04_4_GetZkslByZL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Save">
+      <soap:operation soapAction="http://tempuri.org/HT04_4_Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <soap:operation soapAction="http://tempuri.org/HT04_4_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <soap:operation soapAction="http://tempuri.org/HT05_GetYXTS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <soap:operation soapAction="http://tempuri.org/HT06_GetLotNoInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <soap:operation soapAction="http://tempuri.org/HT06_GetPhbInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <soap:operation soapAction="http://tempuri.org/HT06_GetPhMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <soap:operation soapAction="http://tempuri.org/getCLBH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <soap:operation soapAction="http://tempuri.org/getRKZF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <soap:operation soapAction="http://tempuri.org/checkPMPH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFFD010">
+      <soap:operation soapAction="http://tempuri.org/AddFFD010" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <soap:operation soapAction="http://tempuri.org/getsysDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <soap:operation soapAction="http://tempuri.org/ExistsEVE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <soap:operation soapAction="http://tempuri.org/getRKBiaoZhun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <soap:operation soapAction="http://tempuri.org/HT12_GetYCLMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <soap:operation soapAction="http://tempuri.org/HT12_GetRTMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <soap:operation soapAction="http://tempuri.org/HT12_HLPCLOTNOExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <soap:operation soapAction="http://tempuri.org/HT12_GetJPXX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <soap:operation soapAction="http://tempuri.org/HT14_GetHgzBsrMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <soap:operation soapAction="http://tempuri.org/HT14_GetHgzRohsMX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebDbSrvSoap12" type="tns:WebDbSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <soap12:operation soapAction="http://tempuri.org/AAAAStr2HEXStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <soap12:operation soapAction="http://tempuri.org/WriteErrorLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <soap12:operation soapAction="http://tempuri.org/GetMenuPro_ALL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap12:operation soapAction="http://tempuri.org/CheckLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <soap12:operation soapAction="http://tempuri.org/WriteSysLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <soap12:operation soapAction="http://tempuri.org/PrintBarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintHgz">
+      <soap12:operation soapAction="http://tempuri.org/PrintHgz" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcodeList">
+      <soap12:operation soapAction="http://tempuri.org/PrintBarcodeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <soap12:operation soapAction="http://tempuri.org/GetKhList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <soap12:operation soapAction="http://tempuri.org/ATEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <soap12:operation soapAction="http://tempuri.org/APrintQrTEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <soap12:operation soapAction="http://tempuri.org/getSYMCBySYBH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <soap12:operation soapAction="http://tempuri.org/HT03_CheckYCLRKLOTNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <soap12:operation soapAction="http://tempuri.org/HT03_GetYCLRKLOTNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <soap12:operation soapAction="http://tempuri.org/HT03_GetYCLZK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Save">
+      <soap12:operation soapAction="http://tempuri.org/HT03_Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <soap12:operation soapAction="http://tempuri.org/HT03_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <soap12:operation soapAction="http://tempuri.org/HT03_GetYCLBH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <soap12:operation soapAction="http://tempuri.org/HT03_GetZF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <soap12:operation soapAction="http://tempuri.org/HT03_GetCLBH_050" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <soap12:operation soapAction="http://tempuri.org/HT03_Get_SYSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <soap12:operation soapAction="http://tempuri.org/HT03_GET_KHXX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <soap12:operation soapAction="http://tempuri.org/HT04_GetYL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <soap12:operation soapAction="http://tempuri.org/HT04_GetPHZZL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <soap12:operation soapAction="http://tempuri.org/HT04_GetPCH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <soap12:operation soapAction="http://tempuri.org/HT04_GetPHB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <soap12:operation soapAction="http://tempuri.org/HT04_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <soap12:operation soapAction="http://tempuri.org/HT04_PDYCLZK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <soap12:operation soapAction="http://tempuri.org/CheckHLPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Save">
+      <soap12:operation soapAction="http://tempuri.org/HT04_Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <soap12:operation soapAction="http://tempuri.org/HT04_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <soap12:operation soapAction="http://tempuri.org/HT04_UpdateLHQF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <soap12:operation soapAction="http://tempuri.org/HT04_1_GetCLMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <soap12:operation soapAction="http://tempuri.org/HT04_GetLHJJ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <soap12:operation soapAction="http://tempuri.org/HT04_UpdateYL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <soap12:operation soapAction="http://tempuri.org/HT04_4_GetSYMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <soap12:operation soapAction="http://tempuri.org/HT04_4_GetZkslByZL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Save">
+      <soap12:operation soapAction="http://tempuri.org/HT04_4_Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <soap12:operation soapAction="http://tempuri.org/HT04_4_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <soap12:operation soapAction="http://tempuri.org/HT05_GetYXTS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <soap12:operation soapAction="http://tempuri.org/HT06_GetLotNoInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <soap12:operation soapAction="http://tempuri.org/HT06_GetPhbInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <soap12:operation soapAction="http://tempuri.org/HT06_GetPhMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <soap12:operation soapAction="http://tempuri.org/getCLBH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <soap12:operation soapAction="http://tempuri.org/getRKZF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <soap12:operation soapAction="http://tempuri.org/checkPMPH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFFD010">
+      <soap12:operation soapAction="http://tempuri.org/AddFFD010" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <soap12:operation soapAction="http://tempuri.org/getsysDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <soap12:operation soapAction="http://tempuri.org/ExistsEVE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <soap12:operation soapAction="http://tempuri.org/getRKBiaoZhun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <soap12:operation soapAction="http://tempuri.org/HT12_GetYCLMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <soap12:operation soapAction="http://tempuri.org/HT12_GetRTMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <soap12:operation soapAction="http://tempuri.org/HT12_HLPCLOTNOExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <soap12:operation soapAction="http://tempuri.org/HT12_GetJPXX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <soap12:operation soapAction="http://tempuri.org/HT14_GetHgzBsrMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <soap12:operation soapAction="http://tempuri.org/HT14_GetHgzRohsMX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebDbSrvHttpGet" type="tns:WebDbSrvHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <http:operation location="/AAAAStr2HEXStr" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <http:operation location="/WriteErrorLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <http:operation location="/GetMenuPro_ALL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <http:operation location="/CheckLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <http:operation location="/WriteSysLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <http:operation location="/PrintBarcode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <http:operation location="/GetKhList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <http:operation location="/ATEST" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <http:operation location="/APrintQrTEST" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <http:operation location="/getSYMCBySYBH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <http:operation location="/HT03_CheckYCLRKLOTNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <http:operation location="/HT03_GetYCLRKLOTNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <http:operation location="/HT03_GetYCLZK" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <http:operation location="/GetCustomerIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <http:operation location="/HT03_Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <http:operation location="/HT03_GetYCLBH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <http:operation location="/HT03_GetZF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <http:operation location="/HT03_GetCLBH_050" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <http:operation location="/HT03_Get_SYSL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <http:operation location="/HT03_GET_KHXX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <http:operation location="/HT04_GetYL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <http:operation location="/HT04_GetPHZZL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <http:operation location="/HT04_GetPCH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <http:operation location="/HT04_GetPHB" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <http:operation location="/HT04_Search" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <http:operation location="/HT04_PDYCLZK" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <http:operation location="/CheckHLPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <http:operation location="/HT04_Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <http:operation location="/HT04_UpdateLHQF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <http:operation location="/HT04_1_GetCLMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <http:operation location="/HT04_GetLHJJ" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <http:operation location="/HT04_UpdateYL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <http:operation location="/HT04_4_GetSYMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <http:operation location="/HT04_4_GetZkslByZL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <http:operation location="/HT04_4_Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <http:operation location="/HT05_GetYXTS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <http:operation location="/HT06_GetLotNoInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <http:operation location="/HT06_GetPhbInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <http:operation location="/HT06_GetPhMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <http:operation location="/getCLBH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <http:operation location="/getRKZF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <http:operation location="/checkPMPH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <http:operation location="/getsysDateTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <http:operation location="/ExistsEVE" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <http:operation location="/getRKBiaoZhun" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <http:operation location="/HT12_GetYCLMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <http:operation location="/HT12_GetRTMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <http:operation location="/HT12_HLPCLOTNOExists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <http:operation location="/HT12_GetJPXX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <http:operation location="/HT14_GetHgzBsrMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <http:operation location="/HT14_GetHgzRohsMX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebDbSrvHttpPost" type="tns:WebDbSrvHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="AAAAStr2HEXStr">
+      <http:operation location="/AAAAStr2HEXStr" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <http:operation location="/WriteErrorLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuPro_ALL">
+      <http:operation location="/GetMenuPro_ALL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <http:operation location="/CheckLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSysLog">
+      <http:operation location="/WriteSysLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="PrintBarcode">
+      <http:operation location="/PrintBarcode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhList">
+      <http:operation location="/GetKhList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ATEST">
+      <http:operation location="/ATEST" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="APrintQrTEST">
+      <http:operation location="/APrintQrTEST" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getSYMCBySYBH">
+      <http:operation location="/getSYMCBySYBH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_CheckYCLRKLOTNO">
+      <http:operation location="/HT03_CheckYCLRKLOTNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLRKLOTNO">
+      <http:operation location="/HT03_GetYCLRKLOTNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLZK">
+      <http:operation location="/HT03_GetYCLZK" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerIP">
+      <http:operation location="/GetCustomerIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Delete">
+      <http:operation location="/HT03_Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetYCLBH">
+      <http:operation location="/HT03_GetYCLBH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetZF">
+      <http:operation location="/HT03_GetZF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GetCLBH_050">
+      <http:operation location="/HT03_GetCLBH_050" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_Get_SYSL">
+      <http:operation location="/HT03_Get_SYSL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT03_GET_KHXX">
+      <http:operation location="/HT03_GET_KHXX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetYL">
+      <http:operation location="/HT04_GetYL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHZZL">
+      <http:operation location="/HT04_GetPHZZL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPCH">
+      <http:operation location="/HT04_GetPCH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetPHB">
+      <http:operation location="/HT04_GetPHB" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Search">
+      <http:operation location="/HT04_Search" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_PDYCLZK">
+      <http:operation location="/HT04_PDYCLZK" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHLPC">
+      <http:operation location="/CheckHLPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_Delete">
+      <http:operation location="/HT04_Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateLHQF">
+      <http:operation location="/HT04_UpdateLHQF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_1_GetCLMX">
+      <http:operation location="/HT04_1_GetCLMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_GetLHJJ">
+      <http:operation location="/HT04_GetLHJJ" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_UpdateYL">
+      <http:operation location="/HT04_UpdateYL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetSYMX">
+      <http:operation location="/HT04_4_GetSYMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_GetZkslByZL">
+      <http:operation location="/HT04_4_GetZkslByZL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT04_4_Delete">
+      <http:operation location="/HT04_4_Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT05_GetYXTS">
+      <http:operation location="/HT05_GetYXTS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetLotNoInfo">
+      <http:operation location="/HT06_GetLotNoInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhbInfo">
+      <http:operation location="/HT06_GetPhbInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT06_GetPhMX">
+      <http:operation location="/HT06_GetPhMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCLBH">
+      <http:operation location="/getCLBH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKZF">
+      <http:operation location="/getRKZF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPMPH">
+      <http:operation location="/checkPMPH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsysDateTime">
+      <http:operation location="/getsysDateTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistsEVE">
+      <http:operation location="/ExistsEVE" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRKBiaoZhun">
+      <http:operation location="/getRKBiaoZhun" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetYCLMX">
+      <http:operation location="/HT12_GetYCLMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetRTMX">
+      <http:operation location="/HT12_GetRTMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_HLPCLOTNOExists">
+      <http:operation location="/HT12_HLPCLOTNOExists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT12_GetJPXX">
+      <http:operation location="/HT12_GetJPXX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzBsrMX">
+      <http:operation location="/HT14_GetHgzBsrMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HT14_GetHgzRohsMX">
+      <http:operation location="/HT14_GetHgzRohsMX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebDbSrv">
+    <wsdl:port name="WebDbSrvSoap" binding="tns:WebDbSrvSoap">
+      <soap:address location="http://192.168.231.21:8000/WebDbSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebDbSrvSoap12" binding="tns:WebDbSrvSoap12">
+      <soap12:address location="http://192.168.231.21:8000/WebDbSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebDbSrvHttpGet" binding="tns:WebDbSrvHttpGet">
+      <http:address location="http://192.168.231.21:8000/WebDbSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebDbSrvHttpPost" binding="tns:WebDbSrvHttpPost">
+      <http:address location="http://192.168.231.21:8000/WebDbSrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
