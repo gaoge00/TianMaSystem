@@ -14,9 +14,9 @@ namespace TianMaSystem
     public partial class PC07 : Form
     {
         BLL.fmd030 _bllFMD030 = new BLL.fmd030();
-        Model.fmd030 _modelFMD030 = new Model.fmd030();
         Function.systemdate systemdate = new Function.systemdate();
         public const string TableName = "FMD030";
+        public  int iID = -1;
         public PC07()
         {
             InitializeComponent();
@@ -26,11 +26,7 @@ namespace TianMaSystem
         {
             try
             {
-                //定义Spread 行数
-                this.fspdMc.ActiveSheet.Rows.Count = 0;
-                fillSPD();
-                //combox绑定数据
-               // comboxBind(cboGlMc, "GLMC");
+                Init();
             }
             catch (Exception ex)
             {
@@ -117,10 +113,12 @@ namespace TianMaSystem
                     {
                         this.fspdMc.ActiveSheet.Rows.Count++;
                         //往spread里填充数据
-                        this.fspdMc.ActiveSheet.SetValue(i, 0, dtTable.Rows[i]["KHBH"].ToString());
-                        this.fspdMc.ActiveSheet.SetValue(i, 1, dtTable.Rows[i]["KHMC"].ToString());
-                        this.fspdMc.ActiveSheet.SetValue(i, 2, dtTable.Rows[i]["KHSXM"].ToString());
-                       // this.fspdMc.ActiveSheet.SetValue(i, 3, dtTable.Rows[i]["sxmc"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 0, dtTable.Rows[i]["GYSMC"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 1, dtTable.Rows[i]["GYSSLMC"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 2, dtTable.Rows[i]["DZ"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 3, dtTable.Rows[i]["DH"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 4, dtTable.Rows[i]["LXR"].ToString());
+                        this.fspdMc.ActiveSheet.SetValue(i, 5, dtTable.Rows[i]["ID"].ToString());
                     }
 
                     ComSpread.SpdSetFocus(fspdMc, 0, 0);
@@ -190,7 +188,7 @@ namespace TianMaSystem
             else
             {
                 //cboGlMc.Focus();
-                txtDZ.Focus();
+                txtGYSMC.Focus();
             }
         }
 
@@ -279,57 +277,53 @@ namespace TianMaSystem
            
             if (txtGYSMC.Text.strReplace().IsNullOrEmpty())
             {
-                ComForm.DspMsg("W002", "客户名称");
+                ComForm.DspMsg("W002", "供应商名称");
                 txtGYSMC.Focus();
                 return;
 
             }
-            if (txtGYSSLMC.Text.strReplace().IsNullOrEmpty())
-            {
 
-                ComForm.DspMsg("W002", "缩略名称");
-                txtGYSSLMC.Focus();
+            if (DBHelper.Exists(TableName, "and GYSMC='"+txtGYSMC.Text.strReplace()+"'"))
+            {
+                ComForm.DspMsg("W068", "供应商名称");
+                txtGYSMC.Focus();
                 return;
             }
-
-            //if (_bllFMD030.chkMCK_ZSMC("", txtDZ.Text.strReplace(), txtZsMc.Text.strReplace()))
-            //{
-            //    ComForm.DspMsg("W068", "客户名称");
-            //    txtZsMc.Focus();
-            //    return;
-            //}
             if (ComConst.LING == ComForm.DspMsg("Q004", ""))
             {
-
                 try
                 {
-   
-                    //_modelFMD030.KHBH = txtDZ.Text.strReplace();
-                    //_modelFMD030.KHMC = txtZsMc.Text.strReplace();
-                    //_modelFMD030.KHSXM = txtSxMc.Text.strReplace();
-                    //_modelFMD030.ZT = "1";
-                    if (DBHelper.Exists(TableName," and "))
+                    Model.fmd030 _modelFMD030 = new Model.fmd030();
+                    _modelFMD030.ID = iID;
+                    _modelFMD030.GYSMC = txtGYSMC.Text.strReplace();
+                    _modelFMD030.GYSSLMC = txtGYSSLMC.Text.strReplace();
+                    _modelFMD030.DZ = txtDZ.Text.strReplace();
+                    _modelFMD030.DH = txtDH.Text.strReplace();
+                    _modelFMD030.LXR = txtLXR.Text.strReplace();
+                    if (_modelFMD030.ID!=-1)
                     {
                         //更新数据
-                        //_modelFMD030.GXZBH = ComForm.strUserName;
-                        //_modelFMD030.GXR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
-                        //_modelFMD030.GXSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
-                        //_modelFMD030.GXDMM = systemdate.Get_SysDNBH();
+                        _modelFMD030.GXZBH = ComForm.strUserName;
+                        _modelFMD030.GXR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
+                        _modelFMD030.GXSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
+                        _modelFMD030.GXDMM = systemdate.Get_SysDNBH();
+                        DbHelperMySql.ExecuteSql(DBHelper.Update(TableName,_modelFMD030," and ID="+_modelFMD030.ID+""));
+
                         //_bllFMD030.Update(_modelFMD030);
                         ComForm.DspMsg("M002", "");
-                        txtDZ.Focus();
+                        txtGYSMC.Focus();
                     }
                     else
                     {
                         //插入数据
-                        //_modelFMD030.RLZBH = ComForm.strUserName;
-                        //_modelFMD030.RLR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
-                        //_modelFMD030.RLSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
-                        //_modelFMD030.RLDMM = systemdate.Get_SysDNBH();
-                        //_bllFMD030.Add(_modelFMD030);
+                        _modelFMD030.ID = null;
+                        _modelFMD030.RLZBH = ComForm.strUserName;
+                        _modelFMD030.RLR = PublicFun.GetSystemDateTime(Const.Date, Const.dateStyle_YMD);
+                        _modelFMD030.RLSJ = PublicFun.GetSystemDateTime(Const.Time, string.Empty);
+                        _modelFMD030.RLDMM = systemdate.Get_SysDNBH();
+                       DbHelperMySql.ExecuteSql(DBHelper.Add(TableName,_modelFMD030));
                         ComForm.DspMsg("M002", "");
-                        txtDZ.Focus();
-
+                        txtGYSMC.Focus();
                     }
 
                 }
@@ -339,13 +333,8 @@ namespace TianMaSystem
                     ComForm.InsertErrLog(ew.ToString(), this.Name);
                     return;
                 }
-                txtDZ.Text = string.Empty;
-                txtGYSMC.Text = string.Empty;
-                txtGYSSLMC.Text = string.Empty;
-                fillSPD();
-                txtDZ.Focus();
+                Init();
             }
-
         }
 
         //退出按钮
@@ -374,13 +363,13 @@ namespace TianMaSystem
                 //    txtDZ.Text = string.Empty;
                 //    return;
                 //}
-                if (!txtDZ.Text.IsNullOrEmpty())
-                {
-                    txtDZ.Text = txtDZ.Text.PadLeft(6, '0');
-                }
+                //if (!txtDZ.Text.IsNullOrEmpty())
+                //{
+                //    txtDZ.Text = txtDZ.Text.PadLeft(6, '0');
+                //}
                 if (DBHelper.Exists("FMD000", " and "))
                 {
-                    _modelFMD030 = new Model.fmd030();
+                    //_modelFMD030 = new Model.fmd030();
                     //_modelFMD030 = _bllFMD030.GetModel(txtDZ.Text, "");
                     //txtZsMc.Text = _modelFMD030.KHMC;
                     //txtSxMc.Text = _modelFMD030.KHSXM;
@@ -414,10 +403,13 @@ namespace TianMaSystem
                 //string ty = rt.Substring(0, 1);
                 //string arrData = System.Configuration.ConfigurationSettings.AppSettings["QX"];
 
-               
-                txtDZ.Text = this.fspdMc.Sheets[0].Cells[e.Row, 0].Text.ToString().Trim();
-                txtGYSMC.Text = this.fspdMc.Sheets[0].Cells[e.Row, 1].Text.ToString().Trim();
-                txtGYSSLMC.Text = this.fspdMc.Sheets[0].Cells[e.Row, 2].Text.ToString().Trim();
+
+                txtGYSMC.Text = this.fspdMc.ActiveSheet.Cells[e.Row, 0].Text.ToString().Trim();
+                txtGYSSLMC.Text = this.fspdMc.ActiveSheet.Cells[e.Row, 1].Text.ToString().Trim();
+                txtDZ.Text = this.fspdMc.ActiveSheet.Cells[e.Row, 2].Text.ToString().Trim();
+                txtDH.Text = this.fspdMc.ActiveSheet.Cells[e.Row, 3].Text.ToString().Trim();
+                txtLXR.Text = this.fspdMc.ActiveSheet.Cells[e.Row, 4].Text.ToString().Trim();
+                iID = this.fspdMc.ActiveSheet.Cells[e.Row, 5].Text.ToString().StringToInt();
 
             }
             catch (Exception ex)
@@ -491,6 +483,19 @@ namespace TianMaSystem
             //    txtDZ.Text = txtDZ.Text.PadLeft(6, '0');
             //}
 
+        }
+
+        private void Init()
+        {
+            txtDZ.Text =
+            txtDH.Text =
+            txtLXR.Text = 
+            txtGYSSLMC.Text = 
+            txtGYSMC.Text = string.Empty;
+            iID = -1;
+            fspdMc.ActiveSheet.Rows.Count = 0;
+            txtGYSMC.Focus();
+            fillSPD();
         }
     }
 }

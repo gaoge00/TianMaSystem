@@ -26,21 +26,21 @@ namespace Model
 		public fmd030()
 		{}
 		#region Model
-		private int? ID {get;set;}
-		private string GYSMC {get;set;}
-		private string GYSSLMC {get;set;}
-		private string DZ {get;set;}
-        private string DH {get;set;}
-		private string LXR {get;set;}
-        private string SCQF {get;set;}
-		private string RLZBH {get;set;}
-        private string RLR { get; set; }
-        private string RLSJ { get; set; }
-        private string RLDMM { get; set; }
-        private string GXZBH { get; set; }
-        private string GXR { get; set; }
-        private string GXSJ { get; set; }
-        private string GXDMM { get; set; }
+        public int? ID { get; set; }
+        public string GYSMC { get; set; }
+        public string GYSSLMC { get; set; }
+        public string DZ { get; set; }
+        public string DH { get; set; }
+        public string LXR { get; set; }
+        public string SCQF { get; set; }
+        public string RLZBH { get; set; }
+        public string RLR { get; set; }
+        public string RLSJ { get; set; }
+        public string RLDMM { get; set; }
+        public string GXZBH { get; set; }
+        public string GXR { get; set; }
+        public string GXSJ { get; set; }
+        public string GXDMM { get; set; }
 		
 		#endregion Model
 
